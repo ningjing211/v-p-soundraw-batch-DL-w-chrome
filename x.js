@@ -7,6 +7,39 @@ const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
 
 // 获取 Chrome 默认下载文件夹
 const downloadPath = path.join(os.homedir(), 'Downloads');
+const progressFile = path.join(__dirname, 'download_progress.json');
+
+// 读取下载进度
+function loadProgress() {
+  try {
+    if (fs.existsSync(progressFile)) {
+      const data = fs.readFileSync(progressFile, 'utf8');
+      const progress = JSON.parse(data);
+      console.log('📝 读取进度文件成功，上次处理到第', progress.lastPage, '页');
+      // 从下一页开始处理
+      progress.lastPage = progress.lastPage + 1;
+      return progress;
+    }
+  } catch (error) {
+    console.log('读取进度文件失败:', error.message);
+  }
+  console.log('⚠️ 未找到进度文件，将从第 1 页开始');
+  return { lastPage: 1, downloadedFiles: [] };
+}
+
+// 保存下载进度
+function saveProgress(progress) {
+  try {
+    fs.writeFileSync(progressFile, JSON.stringify(progress, null, 2));
+  } catch (error) {
+    console.log('保存进度失败:', error.message);
+  }
+}
+
+// 检查文件是否已下载
+function isFileDownloaded(filename, progress) {
+  return progress.downloadedFiles.includes(filename);
+}
 
 async function waitForPageLoad(page) {
   try {
@@ -91,151 +124,158 @@ async function waitForFileDownload() {
   console.log('⏳ 等待文件下载...');
   console.log('📂 监控下载文件夹:', downloadPath);
   
-  // 获取下载前的文件列表
   const beforeFiles = new Set(fs.readdirSync(downloadPath));
   
   return new Promise((resolve) => {
     let timeoutId;
     const watcher = fs.watch(downloadPath, (eventType, filename) => {
-      if (eventType === 'rename' && filename) {  // 新文件创建事件
+      if (eventType === 'rename' && filename) {
         const currentFiles = new Set(fs.readdirSync(downloadPath));
         const newFiles = [...currentFiles].filter(x => !beforeFiles.has(x));
         
-        // 检查是否有新的 .m4a 或 .mp3 文件
         const newAudioFiles = newFiles.filter(file => 
           file.endsWith('.m4a') || file.endsWith('.mp3')
         );
         
         if (newAudioFiles.length > 0) {
-          console.log('✅ 检测到新下载的音频文件:', newAudioFiles[0]);
+          const downloadedFile = newAudioFiles[0];
+          console.log('✅ 检测到新下载的音频文件:', downloadedFile);
           clearTimeout(timeoutId);
           watcher.close();
-          resolve(true);
+          resolve(downloadedFile);
         }
       }
     });
     
-    // 设置超时（2分钟）
     timeoutId = setTimeout(() => {
       watcher.close();
       console.log('⚠️ 等待下载超时');
-      resolve(false);
+      resolve(null);
     }, 120000);
   });
 }
 
-async function processPage(page, pageNum) {
-  console.log(`\n📄 正在处理第 ${pageNum} 页...`);
-  
-  // 前往对应页面
-  await page.goto(`https://soundraw.io/favorite?page=${pageNum}`, { 
-    waitUntil: 'networkidle2',
-    timeout: 30000 
-  });
+async function hasNextPage(page) {
+  try {
+    const nextButton = await page.$('button.next-button');
+    if (!nextButton) return false;
 
-  // 等待页面加载
-  const isLoaded = await waitForPageLoad(page);
-  if (!isLoaded) {
-    console.log('❌ 页面加载失败，请确保已登录 Soundraw');
+    const isLastPage = await page.evaluate(button => {
+      return button.classList.contains('disabled') || 
+             button.getAttribute('disabled') !== null;
+    }, nextButton);
+
+    return !isLastPage;
+  } catch (error) {
+    console.log('检查下一页时出错:', error.message);
     return false;
   }
+}
 
-  // 检查是否有下载按钮
-  const buttons = await page.$$('button#gtm-track-download-btn');
-  if (!buttons || buttons.length === 0) {
-    console.log('🔍 当前页面没有发现下载按钮，可能已经处理完所有页面');
+async function goToNextPage(page) {
+  try {
+    console.log('📄 切换到下一页...');
+    await page.click('button.next-button');
+    await new Promise(r => setTimeout(r, 2000));
+    return true;
+  } catch (error) {
+    console.log('切换页面时出错:', error.message);
     return false;
   }
+}
 
-  console.log(`🎵 发现 ${buttons.length} 首歌`);
-
-  for (let i = 0; i < buttons.length; i++) {
-    try {
-      const button = buttons[i];
-      console.log(`\n▶️ 处理第 ${i + 1}/${buttons.length} 首歌...`);
-      
-      // 确保按钮在视图中
-      await button.evaluate(b => {
-        b.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      });
-      await delay(800);
-      
-      // 点击下载按钮
-      await button.click();
-      await delay(1500);
-
-      // 等待并点击 MP3 按钮
-      const mp3Btn = await page.waitForSelector('button.primary-btn', {
-        visible: true,
-        timeout: 5000
-      });
-      
-      if (!mp3Btn) {
-        throw new Error('找不到 MP3 下载按钮');
+async function getSongTitle(btn) {
+  try {
+    return await btn.evaluate(element => {
+      const card = element.closest('.song-card');
+      if (card) {
+        const titleElement = card.querySelector('.song-title');
+        return titleElement ? titleElement.textContent.trim() : null;
       }
-
-      await mp3Btn.click();
-      await delay(2000);
-      
-      console.log(`✅ 第 ${i + 1} 首 MP3 触发成功`);
-    } catch (err) {
-      console.warn(`⚠️ 第 ${i + 1} 首失败：${err.message}`);
-      // 关闭可能打开的下载弹窗
-      try {
-        const closeBtn = await page.$('button.close-btn');
-        if (closeBtn) {
-          await closeBtn.click();
-          await delay(500);
-        }
-      } catch (e) {}
-    }
+      return null;
+    });
+  } catch (error) {
+    console.log('获取歌曲标题失败:', error.message);
+    return null;
   }
-
-  return true;
 }
 
 async function processAllSongs(page) {
-  // 获取所有下载按钮
-  console.log('正在查找所有下载按钮...');
-  const downloadBtns = await page.$$('button#gtm-track-download-btn');
-  console.log(`找到 ${downloadBtns.length} 个下载按钮`);
+  let progress = loadProgress();
+  let currentPage = progress.lastPage;
+  let hasMore = true;
 
-  for (let i = 0; i < downloadBtns.length; i++) {
-    try {
-      const btn = downloadBtns[i];
-      console.log(`\n▶️ 处理第 ${i + 1}/${downloadBtns.length} 首歌...`);
+  // 如果不在正确的页面，先导航到上次的页面
+  const currentUrl = await page.url();
+  const targetUrl = `https://soundraw.io/favorite?page=${currentPage}`;
+  if (currentUrl !== targetUrl) {
+    await page.goto(targetUrl, { waitUntil: 'networkidle2' });
+    await new Promise(r => setTimeout(r, 2000));
+  }
 
-      // 滚动到按钮位置
-      await btn.evaluate(b => b.scrollIntoView({ behavior: 'smooth', block: 'center' }));
-      await new Promise(r => setTimeout(r, 800));
+  while (hasMore) {
+    console.log(`\n📑 正在处理第 ${currentPage} 页`);
+    
+    const downloadBtns = await page.$$('button#gtm-track-download-btn');
+    console.log(`找到 ${downloadBtns.length} 个下载按钮`);
 
-      // 点击下载按钮
-      console.log('点击下载按钮');
-      await btn.click();
-      await new Promise(r => setTimeout(r, 1500));
+    for (let i = 0; i < downloadBtns.length; i++) {
+      try {
+        const btn = downloadBtns[i];
+        const songTitle = await getSongTitle(btn);
+        
+        if (songTitle && isFileDownloaded(songTitle, progress)) {
+          console.log(`⏭️ 跳过已下载的歌曲: ${songTitle}`);
+          continue;
+        }
 
-      // 查找 MP3 按钮
-      console.log('查找 MP3 按钮');
-      const mp3Btn = await page.$('button.primary-btn');
+        console.log(`\n▶️ 处理第 ${i + 1}/${downloadBtns.length} 首歌${songTitle ? ': ' + songTitle : ''}`);
 
-      if (!mp3Btn) {
-        // 如果没有找到 MP3 按钮，说明可能正在下载中
-        console.log('未发现 MP3 按钮，等待当前下载完成...');
-        await waitForFileDownload();
-        continue;
+        await btn.evaluate(b => b.scrollIntoView({ behavior: 'smooth', block: 'center' }));
+        await new Promise(r => setTimeout(r, 800));
+
+        await btn.click();
+        await new Promise(r => setTimeout(r, 1500));
+
+        const mp3Btn = await page.$('button.primary-btn');
+
+        if (!mp3Btn) {
+          console.log('未发现 MP3 按钮，等待当前下载完成...');
+          const downloadedFile = await waitForFileDownload();
+          if (downloadedFile && songTitle) {
+            progress.downloadedFiles.push(songTitle);
+            saveProgress(progress);
+          }
+          continue;
+        }
+
+        await mp3Btn.click();
+        const downloadedFile = await waitForFileDownload();
+        if (downloadedFile && songTitle) {
+          progress.downloadedFiles.push(songTitle);
+          saveProgress(progress);
+        }
+
+      } catch (error) {
+        console.log(`❌ 处理第 ${i + 1} 首歌时出错:`, error.message);
+        await new Promise(r => setTimeout(r, 5000));
       }
+    }
 
-      // 找到了 MP3 按钮，点击它
-      console.log('点击 MP3 按钮');
-      await mp3Btn.click();
-      
-      // 等待文件下载完成
-      await waitForFileDownload();
-
-    } catch (error) {
-      console.log(`❌ 处理第 ${i + 1} 首歌时出错:`, error.message);
-      // 等待一段时间后继续
-      await new Promise(r => setTimeout(r, 5000));
+    if (await hasNextPage(page)) {
+      console.log('\n✨ 发现下一页，准备切换...');
+      const success = await goToNextPage(page);
+      if (!success) {
+        console.log('❌ 切换到下一页失败，停止处理');
+        hasMore = false;
+      } else {
+        currentPage++;
+        progress.lastPage = currentPage;
+        saveProgress(progress);
+      }
+    } else {
+      console.log('\n🎉 已经是最后一页了！');
+      hasMore = false;
     }
   }
 }
