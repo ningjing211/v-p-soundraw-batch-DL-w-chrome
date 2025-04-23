@@ -1,4 +1,4 @@
-const puppeteer = require('puppeteer');
+const puppeteer = require('puppeteer-core');
 const path = require('path');
 const os = require('os');
 const fs = require('fs');
@@ -8,23 +8,37 @@ const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
 // 获取 Chrome 默认下载文件夹
 const downloadPath = path.join(os.homedir(), 'Downloads');
 const progressFile = path.join(__dirname, 'download_progress.json');
+const downloadLogFile = path.join(__dirname, 'download_log.json');
 
 // 读取下载进度
 function loadProgress() {
   try {
-    if (fs.existsSync(progressFile)) {
-      const data = fs.readFileSync(progressFile, 'utf8');
-      const progress = JSON.parse(data);
-      console.log('📝 读取进度文件成功，上次处理到第', progress.lastPage, '页');
-      // 从下一页开始处理
-      progress.lastPage = progress.lastPage + 1;
-      return progress;
+    // 先嘗試讀取download_log.json
+    if (fs.existsSync(downloadLogFile)) {
+      const logData = fs.readFileSync(downloadLogFile, 'utf8');
+      const log = JSON.parse(logData);
+      if (log.sessions && log.sessions.length > 0) {
+        // 找到最後一個有下載歌曲的會話
+        const lastSessionWithSongs = log.sessions.find(session => session.totalSongs > 0);
+        if (lastSessionWithSongs) {
+          console.log('📝 讀取下載日誌成功，上次下載到第', lastSessionWithSongs.totalSongs, '首');
+          console.log(`ℹ️ 將從第 ${lastSessionWithSongs.lastPage} 頁的第 ${lastSessionWithSongs.nextStartIndex} 首開始下載`);
+          return {
+            lastPage: lastSessionWithSongs.lastPage || 1,
+            downloadedFiles: lastSessionWithSongs.songs.map(song => song.songName),
+            nextStartIndex: lastSessionWithSongs.nextStartIndex || 1
+          };
+        }
+      }
     }
+
+    // 如果沒有有效的下載記錄，從頭開始
+    console.log('⚠️ 未找到有效的下載記錄，將從第 1 頁開始');
+    return { lastPage: 1, downloadedFiles: [], nextStartIndex: 1 };
   } catch (error) {
-    console.log('读取进度文件失败:', error.message);
+    console.log('讀取進度文件失敗:', error.message);
+    return { lastPage: 1, downloadedFiles: [], nextStartIndex: 1 };
   }
-  console.log('⚠️ 未找到进度文件，将从第 1 页开始');
-  return { lastPage: 1, downloadedFiles: [] };
 }
 
 // 保存下载进度
@@ -34,6 +48,59 @@ function saveProgress(progress) {
   } catch (error) {
     console.log('保存进度失败:', error.message);
   }
+}
+
+// 读取下载日志
+function loadDownloadLog() {
+  try {
+    if (fs.existsSync(downloadLogFile)) {
+      const data = fs.readFileSync(downloadLogFile, 'utf8');
+      return JSON.parse(data);
+    }
+  } catch (error) {
+    console.log('读取下载日志失败:', error.message);
+  }
+  return {
+    sessions: [],
+    currentSession: {
+      startTime: new Date().toISOString(),
+      songs: [],
+      totalSongs: 0
+    }
+  };
+}
+
+// 保存下载日志
+function saveDownloadLog(log) {
+  try {
+    fs.writeFileSync(downloadLogFile, JSON.stringify(log, null, 2));
+  } catch (error) {
+    console.log('保存下载日志失败:', error.message);
+  }
+}
+
+// 记录下载的歌曲
+function logDownloadedSong(log, songTitle, pageNumber, songIndex) {
+  log.currentSession.songs.push({
+    title: songTitle,
+    page: pageNumber,
+    index: songIndex,
+    downloadTime: new Date().toISOString()
+  });
+  log.currentSession.totalSongs++;
+  saveDownloadLog(log);
+}
+
+// 完成当前会话
+function completeSession(log) {
+  log.currentSession.endTime = new Date().toISOString();
+  log.sessions.push(log.currentSession);
+  log.currentSession = {
+    startTime: new Date().toISOString(),
+    songs: [],
+    totalSongs: 0
+  };
+  saveDownloadLog(log);
 }
 
 // 检查文件是否已下载
@@ -157,17 +224,37 @@ async function waitForFileDownload() {
 
 async function hasNextPage(page) {
   try {
-    const nextButton = await page.$('button.next-button');
-    if (!nextButton) return false;
+    // 獲取當前頁碼
+    const activePage = await page.evaluate(() => {
+      const activeButton = document.querySelector('.paginate-buttons.number-buttons.active-page');
+      return activeButton ? parseInt(activeButton.textContent) : 1;
+    });
 
-    const isLastPage = await page.evaluate(button => {
-      return button.classList.contains('disabled') || 
-             button.getAttribute('disabled') !== null;
-    }, nextButton);
+    // 獲取最大頁碼
+    const maxPage = await page.evaluate(() => {
+      const numberButtons = document.querySelectorAll('.paginate-buttons.number-buttons');
+      let max = 1;
+      numberButtons.forEach(button => {
+        const num = parseInt(button.textContent);
+        if (!isNaN(num) && num > max) {
+          max = num;
+        }
+      });
+      return max;
+    });
 
-    return !isLastPage;
+    console.log(`當前在第 ${activePage} 頁，最大頁數為 ${maxPage} 頁`);
+    
+    // 如果當前頁碼小於最大頁碼，表示還有下一頁
+    const hasNext = activePage < maxPage;
+    
+    if (!hasNext) {
+      console.log('🎯 已到達最後一頁');
+    }
+    
+    return hasNext;
   } catch (error) {
-    console.log('检查下一页时出错:', error.message);
+    console.log('檢查頁碼時出錯:', error.message);
     return false;
   }
 }
@@ -201,35 +288,55 @@ async function getSongTitle(btn) {
 }
 
 async function processAllSongs(page) {
+  console.log('開始處理歌曲...');
+  let downloadLog = loadDownloadLog();
   let progress = loadProgress();
   let currentPage = progress.lastPage;
   let hasMore = true;
 
-  // 如果不在正确的页面，先导航到上次的页面
+  // 計算當前頁面上應該跳過的歌曲數
+  let skipCount = progress.nextStartIndex - 1;
+  console.log(`ℹ️ 將從第 ${currentPage} 頁的第 ${skipCount + 1} 首歌開始下載`);
+
+  // 如果不在正確的頁面，先導航到上次的頁面
   const currentUrl = await page.url();
+  console.log('當前URL:', currentUrl);
   const targetUrl = `https://soundraw.io/favorite?page=${currentPage}`;
-  if (currentUrl !== targetUrl) {
+  if (!currentUrl.includes(targetUrl)) {
+    console.log(`🔄 導航到上次的頁面: ${targetUrl}`);
     await page.goto(targetUrl, { waitUntil: 'networkidle2' });
+    console.log('頁面加載完成');
     await new Promise(r => setTimeout(r, 2000));
   }
 
   while (hasMore) {
-    console.log(`\n📑 正在处理第 ${currentPage} 页`);
+    console.log(`\n📑 正在處理第 ${currentPage} 頁`);
+    
+    console.log('等待下載按鈕出現...');
+    await page.waitForSelector('button#gtm-track-download-btn', { timeout: 10000 }).catch(e => {
+      console.log('等待下載按鈕超時:', e.message);
+    });
     
     const downloadBtns = await page.$$('button#gtm-track-download-btn');
-    console.log(`找到 ${downloadBtns.length} 个下载按钮`);
+    console.log(`找到 ${downloadBtns.length} 個下載按鈕`);
 
     for (let i = 0; i < downloadBtns.length; i++) {
+      // 跳過已下載的歌曲
+      if (i < skipCount) {
+        console.log(`⏭️ 跳過第 ${i + 1} 首歌（已在上次下載）`);
+        continue;
+      }
+
       try {
         const btn = downloadBtns[i];
         const songTitle = await getSongTitle(btn);
         
         if (songTitle && isFileDownloaded(songTitle, progress)) {
-          console.log(`⏭️ 跳过已下载的歌曲: ${songTitle}`);
+          console.log(`⏭️ 跳過已下載的歌曲: ${songTitle}`);
           continue;
         }
 
-        console.log(`\n▶️ 处理第 ${i + 1}/${downloadBtns.length} 首歌${songTitle ? ': ' + songTitle : ''}`);
+        console.log(`\n▶️ 處理第 ${i + 1}/${downloadBtns.length} 首歌${songTitle ? ': ' + songTitle : ''}`);
 
         await btn.evaluate(b => b.scrollIntoView({ behavior: 'smooth', block: 'center' }));
         await new Promise(r => setTimeout(r, 800));
@@ -240,11 +347,12 @@ async function processAllSongs(page) {
         const mp3Btn = await page.$('button.primary-btn');
 
         if (!mp3Btn) {
-          console.log('未发现 MP3 按钮，等待当前下载完成...');
+          console.log('未發現 MP3 按鈕，等待當前下載完成...');
           const downloadedFile = await waitForFileDownload();
           if (downloadedFile && songTitle) {
             progress.downloadedFiles.push(songTitle);
             saveProgress(progress);
+            logDownloadedSong(downloadLog, songTitle, currentPage, i + 1);
           }
           continue;
         }
@@ -254,19 +362,23 @@ async function processAllSongs(page) {
         if (downloadedFile && songTitle) {
           progress.downloadedFiles.push(songTitle);
           saveProgress(progress);
+          logDownloadedSong(downloadLog, songTitle, currentPage, i + 1);
         }
 
       } catch (error) {
-        console.log(`❌ 处理第 ${i + 1} 首歌时出错:`, error.message);
+        console.log(`❌ 處理第 ${i + 1} 首歌時出錯:`, error.message);
         await new Promise(r => setTimeout(r, 5000));
       }
     }
 
+    // 重置跳過計數（只在第一頁需要）
+    skipCount = 0;
+
     if (await hasNextPage(page)) {
-      console.log('\n✨ 发现下一页，准备切换...');
+      console.log('\n✨ 發現下一頁，準備切換...');
       const success = await goToNextPage(page);
       if (!success) {
-        console.log('❌ 切换到下一页失败，停止处理');
+        console.log('❌ 切換到下一頁失敗，停止處理');
         hasMore = false;
       } else {
         currentPage++;
@@ -274,33 +386,87 @@ async function processAllSongs(page) {
         saveProgress(progress);
       }
     } else {
-      console.log('\n🎉 已经是最后一页了！');
+      console.log('\n🎉 已經是最後一頁了！');
       hasMore = false;
     }
   }
+  
+  // 完成當前會話
+  completeSession(downloadLog);
+  console.log('\n📊 本次下載會話統計：');
+  console.log(`總共下載了 ${downloadLog.currentSession.totalSongs} 首歌曲`);
+  console.log(`下一頁將從第 ${progress.lastPage} 頁開始`);
 }
 
 (async () => {
   try {
-    console.log('🔍 正在连接到 Chrome...');
+    console.log('🔍 正在連接到 Chrome...');
+    console.log('正在檢查Chrome調試端口...');
+    
     const browser = await puppeteer.connect({
       browserURL: 'http://127.0.0.1:9222',
       defaultViewport: null
+    }).catch(error => {
+      console.error('連接Chrome失敗:', error.message);
+      throw error;
     });
 
-    console.log('✅ 成功连接到 Chrome');
-    const pages = await browser.pages();
-    console.log(`发现 ${pages.length} 个标签页`);
+    console.log('✅ 成功連接到 Chrome');
+    console.log('正在獲取頁面列表...');
     
-    const page = pages[0];
-    console.log('当前页面 URL:', await page.url());
+    const pages = await browser.pages().catch(error => {
+      console.error('獲取頁面列表失敗:', error.message);
+      throw error;
+    });
+    
+    console.log(`發現 ${pages.length} 個標籤頁`);
+    
+    // 等待所有頁面加載完成
+    console.log('等待頁面加載...');
+    for (const p of pages) {
+      try {
+        const url = await p.url();
+        console.log('找到頁面:', url);
+      } catch (e) {
+        console.log('讀取頁面URL失敗:', e.message);
+      }
+    }
+    
+    // 尋找Soundraw標籤頁
+    let page;
+    for (const p of pages) {
+      try {
+        const url = await p.url();
+        if (url.includes('soundraw.io')) {
+          console.log('找到Soundraw頁面:', url);
+          page = p;
+          break;
+        }
+      } catch (e) {
+        continue;
+      }
+    }
+
+    if (!page) {
+      console.log('未找到Soundraw頁面，創建新標籤頁...');
+      page = await browser.newPage();
+      console.log('正在導航到Soundraw...');
+      await page.goto('https://soundraw.io/favorite', { 
+        waitUntil: 'networkidle2',
+        timeout: 30000 
+      });
+      console.log('頁面加載完成');
+    }
+    
+    console.log('當前頁面 URL:', await page.url());
 
     await processAllSongs(page);
 
     await browser.disconnect();
-    console.log('👋 已断开与浏览器的连接');
+    console.log('👋 已斷開與瀏覽器的連接');
 
   } catch (error) {
-    console.error('❌ 发生错误：', error);
+    console.error('❌ 發生錯誤：', error);
+    process.exit(1);
   }
 })();
