@@ -1,12 +1,12 @@
 {
   "sessions": [],
   "currentSession": {
-    "startTime": "2025-04-25T09:56:37.891Z",
+    "startTime": "2025-04-25T10:19:26.421Z",
     "songs": [],
     "totalSongs": 0,
     "lastPage": 1,
-    "nextStartIndex": 1,
-    "targetNewSongs": 14
+    "nextStartIndex": 1
   },
-  "lastTotalSongs": 282
+  "lastTotalSongs": 300,
+  "lastDownloadEndedTime": null
 }
