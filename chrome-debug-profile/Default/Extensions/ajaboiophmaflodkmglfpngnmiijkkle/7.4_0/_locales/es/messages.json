@@ -1,0 +1,305 @@
+{
+   "activate_shortcut": {
+      "message": "Activar ZetaMarker"
+   },
+   "auto_intro": {
+      "message": "\u003Cp style='margin-top:15px'>Tus datos en cualquier página visitada ahora se sincronizarán automáticamente con la nube cada vez que actives ZetaMarker. Además, cualquier cambio realizado en la página se guardará automáticamente en la nube. Esto elimina la necesidad de sincronización manual, haciendo que sea más rápido y fácil gestionar tus datos.\u003C/p>\u003Cp>Si prefieres no sincronizar automáticamente tus datos con la nube, puedes cerrar sesión en tu cuenta.\u003C/p>"
+   },
+   "auto_log_txt": {
+      "message": "Actualmente estás conectado."
+   },
+   "auto_title": {
+      "message": "Sincronización Automática"
+   },
+   "browser": {
+      "message": "Navegador"
+   },
+   "btn_google": {
+      "message": "Continuar con Google"
+   },
+   "btn_login": {
+      "message": "Iniciar sesión en mi cuenta"
+   },
+   "btn_signup": {
+      "message": "¿Crear una cuenta?"
+   },
+   "btn_url": {
+      "message": "Editar URL"
+   },
+   "cancel": {
+      "message": "Cancelar"
+   },
+   "close": {
+      "message": "Cerrar"
+   },
+   "cloud_check": {
+      "message": "Los datos están sincronizados"
+   },
+   "cloud_fail": {
+      "message": "Error de sincronización. Clic para intentar."
+   },
+   "cloud_slash": {
+      "message": "Inicia sesión para sincronizar"
+   },
+   "confirm": {
+      "message": "Confirmar"
+   },
+   "copied": {
+      "message": "Copiado!"
+   },
+   "copy": {
+      "message": "Copiar"
+   },
+   "copy_all": {
+      "message": "Copiar todo"
+   },
+   "current_version": {
+      "message": "versión 7.4"
+   },
+   "dark": {
+      "message": "Tema oscuro"
+   },
+   "delete": {
+      "message": "Eliminar"
+   },
+   "dismiss": {
+      "message": "Descartar"
+   },
+   "edit_title": {
+      "message": "Editar título"
+   },
+   "email": {
+      "message": "Email"
+   },
+   "error": {
+      "message": "Error: ¡Algo salió mal! Por favor, inténtalo de nuevo."
+   },
+   "error_another_user": {
+      "message": "El dispositivo está en uso por otro usuario"
+   },
+   "error_google_login": {
+      "message": "Falló la autenticación de Google"
+   },
+   "error_invalid_email": {
+      "message": "Email inválido"
+   },
+   "error_invalid_pass": {
+      "message": "Contraseña invalida"
+   },
+   "error_login": {
+      "message": "Dirección de correo electrónico o contraseña incorrecta"
+   },
+   "error_url": {
+      "message": "Introduzca una URL válida o una ruta de archivo PDF."
+   },
+   "export": {
+      "message": "Exportar"
+   },
+   "extdesc": {
+      "message": "La herramienta respetuosa con la privacidad para resaltar páginas web y archivos PDF."
+   },
+   "extname": {
+      "message": "Resaltador ZetaMarker - Web y PDF"
+   },
+   "fail_intro": {
+      "message": "\u003Cp>No pudimos sincronizar con la nube. Por favor, revisa tu conexión a internet. Puedes intentar sincronizar nuevamente ahora o descartar este mensaje para seguir trabajando sin conexión. Tus cambios se sincronizarán la próxima vez que visites esta página.\u003C/p>"
+   },
+   "failed_sync": {
+      "message": "No se pudieron sincronizar los datos"
+   },
+   "feedback": {
+      "message": "Retroalimentación"
+   },
+   "fetch_pages": {
+      "message": "Obtener páginas de la nube"
+   },
+   "forgot_pass": {
+      "message": "¿Olvidaste tu contraseña?"
+   },
+   "guide": {
+      "message": "Guía del usuario"
+   },
+   "highlights": {
+      "message": "Resaltados"
+   },
+   "issue_summary": {
+      "message": "Resumen del problema"
+   },
+   "issue_summary_placeholder": {
+      "message": "Describa brevemente el problema"
+   },
+   "light": {
+      "message": "Tema claro"
+   },
+   "loadig_login": {
+      "message": "Iniciando sesión..."
+   },
+   "login": {
+      "message": "Iniciar sesión"
+   },
+   "login_to_sync": {
+      "message": "Inicia sesión para sincronizar. Actualiza si ya iniciaste sesión en otro lugar."
+   },
+   "logout": {
+      "message": "Cerrar sesión"
+   },
+   "minimal": {
+      "message": "Flotante"
+   },
+   "modal_delete_title": {
+      "message": "¿Estás seguro de que quieres eliminar esta página?"
+   },
+   "modal_delete_warning": {
+      "message": "Todas las anotaciones en esta página se eliminan permanentemente de este dispositivo. Antes de borrar, es posible que desees sincronizar tus datos para asegurarte de que estén respaldados."
+   },
+   "new_url": {
+      "message": "Nueva URL"
+   },
+   "next": {
+      "message": "Siguiente"
+   },
+   "no_page": {
+      "message": "¡No se encontraron páginas en este dispositivo!"
+   },
+   "note_placeholder": {
+      "message": "Ingresa tu comentario y presiona ✔ o Esc"
+   },
+   "page": {
+      "message": "Página"
+   },
+   "page_comment": {
+      "message": "Comentario de la página"
+   },
+   "pages": {
+      "message": "Páginas"
+   },
+   "pass": {
+      "message": "Contraseña"
+   },
+   "prev": {
+      "message": "Anterior"
+   },
+   "print": {
+      "message": "Imprimir"
+   },
+   "q_highlighter": {
+      "message": "Resaltador rápido"
+   },
+   "rate": {
+      "message": "Califícanos"
+   },
+   "refresh": {
+      "message": "Actualizar"
+   },
+   "report_bug": {
+      "message": "Informar un error"
+   },
+   "report_bug_support": {
+      "message": "¡Apóyanos a corregir errores más rápido!"
+   },
+   "resync_intro": {
+      "message": "\u003Cp>Tus datos se han sincronizado correctamente con la nube. Para ver y usar los resaltados recién importados, por favor actualiza la página y reactiva ZetaMarker.\u003C/p>"
+   },
+   "retry": {
+      "message": "Reintentar"
+   },
+   "search_placeholder": {
+      "message": "Ingrese palabras clave para buscar..."
+   },
+   "setting": {
+      "message": "Configuración"
+   },
+   "setting_notice": {
+      "message": "Aviso: Los cambios se aplicarán en la próxima activación de la extensión."
+   },
+   "setting_title_shortcut": {
+      "message": "Ajustar atajos"
+   },
+   "setting_title_theme": {
+      "message": "Tema predeterminado"
+   },
+   "setting_title_toolbar": {
+      "message": "Barra de herramientas predeterminada"
+   },
+   "sidebar": {
+      "message": "Barra lateral"
+   },
+   "sort_earliest": {
+      "message": "Ordenar por Más Antiguo"
+   },
+   "sort_latest": {
+      "message": "Ordenar por Más Reciente"
+   },
+   "sort_position": {
+      "message": "Ordenar por Posición"
+   },
+   "steps_reproduce": {
+      "message": "Pasos para reproducir"
+   },
+   "steps_reproduce_placeholder": {
+      "message": "1. Haga esto...\n2. Luego esto...\n3. Ocurre el problema"
+   },
+   "submit_bug": {
+      "message": "Enviar informe de error"
+   },
+   "submit_bug_err": {
+      "message": "Por favor, complete todos los campos antes de enviar."
+   },
+   "success_fetch_pages": {
+      "message": "¡$1 páginas obtenidas! Obtener anotaciones para cada página."
+   },
+   "success_fetch_pages_zero": {
+      "message": "No se encontraron páginas nuevas"
+   },
+   "success_login": {
+      "message": "Éxito: Has iniciado sesión."
+   },
+   "success_logout": {
+      "message": "Éxito: Has cerrado sesión."
+   },
+   "success_sync": {
+      "message": "Éxito: Sincronización completada."
+   },
+   "support_us": {
+      "message": "Apoie-nos"
+   },
+   "sync_check_intro": {
+      "message": "\u003Cp>Tus cambios se han sincronizado correctamente con el almacenamiento en la nube. Actualizamos automáticamente tus datos en la nube cada 10 segundos para garantizar que todo esté actualizado.\u003C/p>"
+   },
+   "sync_fail_intro": {
+      "message": "\u003Cp>Algunos de tus cambios no pudieron reflejarse en la nube debido a un problema de sincronización. No te preocupes, intentamos sincronizar automáticamente cada 10 segundos.\u003C/p>"
+   },
+   "sync_no_found": {
+      "message": "Datos eliminados en otros dispositivos"
+   },
+   "sync_no_found_intro": {
+      "message": "\u003Cp>Los datos de esta página se han eliminado en otros dispositivos. Por favor, actualiza la página y vuelve a activar ZetaMarker para actualizar el contenido.\u003C/p>"
+   },
+   "synced": {
+      "message": "Sincronizado"
+   },
+   "tip_app": {
+      "message": "Abrir aplicación"
+   },
+   "tip_comment": {
+      "message": "Actualizar comentario"
+   },
+   "txt_no_annotation": {
+      "message": "No se detectaron anotaciones"
+   },
+   "txt_no_annotation_sub": {
+      "message": "Sincronizar para ver anotaciones desde otros dispositivos"
+   },
+   "txt_or": {
+      "message": "O"
+   },
+   "txt_search_result": {
+      "message": "$1 resultados de búsqueda en este dispositivo"
+   },
+   "updated": {
+      "message": "Actualizado"
+   },
+   "url_placeholder": {
+      "message": "Pega la URL desde la barra de direcciones de tu navegador"
+   }
+}

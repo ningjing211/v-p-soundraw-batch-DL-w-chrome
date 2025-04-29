@@ -1,0 +1,302 @@
+{
+   "activate_shortcut": {
+      "message": "ZetaMarker 활성화"
+   },
+   "auto_intro": {
+      "message": "\u003Cp style='margin-top:15px'>ZetaMarker를 활성화할 때 방문한 페이지의 데이터가 클라우드에 자동으로 동기화됩니다. 또한, 페이지에서 이루어진 모든 변경 사항도 클라우드에 자동으로 저장됩니다. 이를 통해 수동 동기화가 필요 없으며, 데이터 관리를 더 빠르고 간편하게 할 수 있습니다.\u003C/p>\u003Cp>데이터를 클라우드에 자동으로 동기화하지 않으려면 계정에서 로그아웃할 수 있습니다.\u003C/p>"
+   },
+   "auto_log_txt": {
+      "message": "현재 로그인된 상태입니다."
+   },
+   "auto_title": {
+      "message": "자동 동기화"
+   },
+   "browser": {
+      "message": "브라우저"
+   },
+   "btn_google": {
+      "message": "Google 계정으로 계속"
+   },
+   "btn_login": {
+      "message": "내 계정으로 로그인"
+   },
+   "btn_signup": {
+      "message": "계정 만들기?"
+   },
+   "btn_url": {
+      "message": "URL 편집"
+   },
+   "cancel": {
+      "message": "취소"
+   },
+   "close": {
+      "message": "닫기"
+   },
+   "cloud_check": {
+      "message": "데이터가 동기화되었습니다"
+   },
+   "cloud_fail": {
+      "message": "동기화 오류. 클릭하여 다시 시도하세요."
+   },
+   "cloud_slash": {
+      "message": "동기화를 위해 로그인하세요"
+   },
+   "confirm": {
+      "message": "확인하다"
+   },
+   "copied": {
+      "message": "복사됨!"
+   },
+   "copy": {
+      "message": "복사"
+   },
+   "copy_all": {
+      "message": "모두 복사"
+   },
+   "current_version": {
+      "message": "버전 7.4"
+   },
+   "dark": {
+      "message": "다크 테마"
+   },
+   "delete": {
+      "message": "삭제"
+   },
+   "dismiss": {
+      "message": "닫기"
+   },
+   "edit_title": {
+      "message": "제목 편집"
+   },
+   "email": {
+      "message": "이메일"
+   },
+   "error": {
+      "message": "문제가 발생했습니다! 다시 시도하세요."
+   },
+   "error_another_user": {
+      "message": "다른 사용자가 사용 중인 장치입니다"
+   },
+   "error_google_login": {
+      "message": "Google 인증 실패."
+   },
+   "error_invalid_email": {
+      "message": "잘못된 이메일"
+   },
+   "error_invalid_pass": {
+      "message": "유효하지 않은 비밀번호"
+   },
+   "error_login": {
+      "message": "잘못된 이메일 주소 또는 비밀번호"
+   },
+   "error_url": {
+      "message": "유효한 URL 또는 PDF 파일 경로를 입력하세요."
+   },
+   "export": {
+      "message": "내보내기"
+   },
+   "extdesc": {
+      "message": "가장 개인정보 보호를 중시하는 온라인 페이지 및 PDF 파일 하이라이팅 도구."
+   },
+   "extname": {
+      "message": "ZetaMarker 하이라이터 - 웹 및 PDF"
+   },
+   "fail_intro": {
+      "message": "\u003Cp>클라우드와 동기화할 수 없었습니다. 인터넷 연결을 확인하세요. 지금 동기화를 다시 시도하거나, 이 메시지를 닫고 오프라인으로 계속 작업할 수 있습니다. 변경 사항은 이 페이지를 다음에 방문할 때 동기화됩니다.\u003C/p>"
+   },
+   "failed_sync": {
+      "message": "데이터 동기화 실패"
+   },
+   "feedback": {
+      "message": "피드백"
+   },
+   "fetch_pages": {
+      "message": "클라우드에서 페이지 검색"
+   },
+   "forgot_pass": {
+      "message": "비밀번호를 잊으셨나요?"
+   },
+   "guide": {
+      "message": "사용자 가이드"
+   },
+   "highlights": {
+      "message": "하이라이트"
+   },
+   "issue_summary": {
+      "message": "문제 요약"
+   },
+   "issue_summary_placeholder": {
+      "message": "문제를 간략하게 설명하세요"
+   },
+   "light": {
+      "message": "라이트 테마"
+   },
+   "loadig_login": {
+      "message": "로그인 중..."
+   },
+   "login": {
+      "message": "로그인"
+   },
+   "login_to_sync": {
+      "message": "동기화하려면 로그인하세요. 이미 다른 곳에 로그인되어 있는 경우 새로 고침하세요."
+   },
+   "logout": {
+      "message": "로그아웃"
+   },
+   "minimal": {
+      "message": "플로팅 툴바"
+   },
+   "modal_delete_title": {
+      "message": "이 페이지를 삭제하시겠습니까?"
+   },
+   "modal_delete_warning": {
+      "message": "이 페이지의 모든 주석이 이 기기에서 영구적으로 삭제됩니다. 삭제하기 전에 데이터를 동기화하여 백업할 수 있습니다."
+   },
+   "new_url": {
+      "message": "새 URL"
+   },
+   "next": {
+      "message": "다음"
+   },
+   "no_page": {
+      "message": "아직 페이지가 없어요. 강조 시작하세요!"
+   },
+   "note_placeholder": {
+      "message": "댓글을 입력하고 ✔ 또는 Esc를 누르세요"
+   },
+   "page": {
+      "message": "페이지"
+   },
+   "page_comment": {
+      "message": "페이지 댓글"
+   },
+   "pages": {
+      "message": "페이지"
+   },
+   "pass": {
+      "message": "비밀번호"
+   },
+   "prev": {
+      "message": "이전"
+   },
+   "print": {
+      "message": "인쇄"
+   },
+   "q_highlighter": {
+      "message": "빠른 하이라이터"
+   },
+   "rate": {
+      "message": "평가하기"
+   },
+   "refresh": {
+      "message": "새로 고침"
+   },
+   "report_bug": {
+      "message": "버그 신고"
+   },
+   "report_bug_support": {
+      "message": "버그를 더 빨리 수정하도록 도와주세요!"
+   },
+   "resync_intro": {
+      "message": "\u003Cp>데이터가 클라우드와 성공적으로 동기화되었습니다. 새로 가져온 하이라이트를 보려면 페이지를 새로 고치고 ZetaMarker를 다시 활성화하세요.\u003C/p>"
+   },
+   "retry": {
+      "message": "재시도"
+   },
+   "search_placeholder": {
+      "message": "검색할 키워드 입력..."
+   },
+   "setting": {
+      "message": "설정"
+   },
+   "setting_notice": {
+      "message": "주의: 변경 사항은 다음 확장 프로그램 활성화 시 적용됩니다."
+   },
+   "setting_title_shortcut": {
+      "message": "바로가기 조정"
+   },
+   "setting_title_theme": {
+      "message": "기본 테마"
+   },
+   "setting_title_toolbar": {
+      "message": "기본 도구 모음"
+   },
+   "sidebar": {
+      "message": "사이드바"
+   },
+   "sort_earliest": {
+      "message": "가장 오래된 순서로 정렬"
+   },
+   "sort_latest": {
+      "message": "가장 최근 순서로 정렬"
+   },
+   "sort_position": {
+      "message": "위치별로 정렬"
+   },
+   "steps_reproduce": {
+      "message": "재현 단계"
+   },
+   "steps_reproduce_placeholder": {
+      "message": "1. 이렇게 하세요...\n2. 그런 다음 이렇게 하세요...\n3. 문제가 발생함"
+   },
+   "submit_bug": {
+      "message": "버그 보고서 제출"
+   },
+   "submit_bug_err": {
+      "message": "제출하기 전에 모든 필드를 작성해 주세요."
+   },
+   "success_fetch_pages": {
+      "message": "$1 페이지를 가져왔습니다. 각 페이지의 주석을 다운로드하세요."
+   },
+   "success_fetch_pages_zero": {
+      "message": "클라우드에 새 페이지가 없습니다."
+   },
+   "success_login": {
+      "message": "성공: 로그인되었습니다."
+   },
+   "success_logout": {
+      "message": "성공: 로그아웃되었습니다."
+   },
+   "success_sync": {
+      "message": "성공: 동기화가 완료되었습니다."
+   },
+   "support_us": {
+      "message": "우리를 지원하세요"
+   },
+   "sync_check_intro": {
+      "message": "\u003Cp>변경 사항이 클라우드 저장소와 성공적으로 동기화되었습니다. 모든 업데이트가 최신 상태를 유지하도록 10초마다 자동으로 동기화됩니다.\u003C/p>"
+   },
+   "sync_fail_intro": {
+      "message": "\u003Cp>동기화 문제로 인해 일부 변경 사항이 클라우드에 반영되지 못했습니다. 걱정하지 마세요. 10초마다 자동으로 동기화를 시도합니다.\u003C/p>"
+   },
+   "sync_no_found": {
+      "message": "다른 기기에서 데이터가 삭제되었습니다"
+   },
+   "sync_no_found_intro": {
+      "message": "\u003Cp>이 페이지의 데이터가 다른 기기에서 삭제되었습니다. 페이지를 새로 고치고 ZetaMarker를 다시 활성화하여 콘텐츠를 업데이트하세요.\u003C/p>"
+   },
+   "synced": {
+      "message": "동기화됨"
+   },
+   "tip_app": {
+      "message": "앱 열기"
+   },
+   "tip_comment": {
+      "message": "코멘트 열기"
+   },
+   "txt_no_annotation": {
+      "message": "어노테이션이 없습니다"
+   },
+   "txt_no_annotation_sub": {
+      "message": "다른 기기에서 어노테이션을 보려면 동기화하세요!"
+   },
+   "txt_or": {
+      "message": "또는"
+   },
+   "updated": {
+      "message": "업데이트됨"
+   },
+   "url_placeholder": {
+      "message": "브라우저 주소창에 URL을 붙여넣으세요"
+   }
+}

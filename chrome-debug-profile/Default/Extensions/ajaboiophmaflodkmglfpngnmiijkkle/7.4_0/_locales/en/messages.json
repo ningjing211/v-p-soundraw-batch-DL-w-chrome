@@ -1,0 +1,299 @@
+{
+   "activate_shortcut": {
+      "message": "Activate ZetaMarker"
+   },
+   "auto_intro": {
+      "message": "\u003Cp>Your data on any visited page will now automatically synchronize with the cloud whenever you activate ZetaMarker. Additionally, any changes made on the page will be automatically saved to the cloud. This eliminates the need for manual synchronization, making it faster and easier to manage your data.\u003C/p>\u003Cp>If you prefer not to automatically synchronize your data with the cloud, you can log out of your account.\u003C/p>"
+   },
+   "auto_log_txt": {
+      "message": "You're currently logged in."
+   },
+   "auto_title": {
+      "message": "Auto Synchronization"
+   },
+   "browser": {
+      "message": "Browser"
+   },
+   "btn_google": {
+      "message": "Continue with Google"
+   },
+   "btn_login": {
+      "message": "Sign in to my account"
+   },
+   "btn_signup": {
+      "message": "Create an account?"
+   },
+   "btn_url": {
+      "message": "Edit URL"
+   },
+   "cancel": {
+      "message": "Cancel"
+   },
+   "close": {
+      "message": "Close"
+   },
+   "cloud_check": {
+      "message": "Data is synced"
+   },
+   "cloud_fail": {
+      "message": "Sync error. Click to retry."
+   },
+   "cloud_slash": {
+      "message": "Login to sync"
+   },
+   "confirm": {
+      "message": "Confirm"
+   },
+   "copied": {
+      "message": "Copied!"
+   },
+   "copy": {
+      "message": "Copy"
+   },
+   "copy_all": {
+      "message": "Copy all"
+   },
+   "current_version": {
+      "message": "version 7.4"
+   },
+   "dark": {
+      "message": "Dark theme"
+   },
+   "delete": {
+      "message": "Delete"
+   },
+   "dismiss": {
+      "message": "Dismiss"
+   },
+   "edit_title": {
+      "message": "Edit title"
+   },
+   "email": {
+      "message": "Email"
+   },
+   "error": {
+      "message": "Something went wrong! Try again later."
+   },
+   "error_another_user": {
+      "message": "Device in use by another user."
+   },
+   "error_google_login": {
+      "message": "Google authentication failed."
+   },
+   "error_invalid_email": {
+      "message": "Invalid email address"
+   },
+   "error_invalid_pass": {
+      "message": "Invalid password"
+   },
+   "error_login": {
+      "message": "Wrong email address or password"
+   },
+   "error_url": {
+      "message": "Enter a valid URL or PDF file path."
+   },
+   "export": {
+      "message": "Export"
+   },
+   "extdesc": {
+      "message": "The privacy-friendly tool for highlighting web pages and PDF files."
+   },
+   "extname": {
+      "message": "ZetaMarker - PDF & Web Highlighter"
+   },
+   "fail_intro": {
+      "message": "\u003Cp>We couldn't synchronize with the cloud. Please check your internet connection. You can retry syncing now or dismiss this message to continue working offline. Your changes will sync the next time you visit this page.\u003C/p>"
+   },
+   "failed_sync": {
+      "message": "Failed to sync data"
+   },
+   "feedback": {
+      "message": "Feedback"
+   },
+   "fetch_pages": {
+      "message": "Retrieve pages from cloud"
+   },
+   "forgot_pass": {
+      "message": "Forgot password?"
+   },
+   "guide": {
+      "message": "User guide"
+   },
+   "highlights": {
+      "message": "Highlights"
+   },
+   "issue_summary": {
+      "message": "Issue Summary"
+   },
+   "issue_summary_placeholder": {
+      "message": "Briefly describe the issue"
+   },
+   "light": {
+      "message": "Light theme"
+   },
+   "loadig_login": {
+      "message": "Signing in..."
+   },
+   "login": {
+      "message": "Login"
+   },
+   "login_to_sync": {
+      "message": "Log in to sync. Refresh if already logged in elsewhere."
+   },
+   "logout": {
+      "message": "Log out"
+   },
+   "minimal": {
+      "message": "Floating toolbar"
+   },
+   "modal_delete_title": {
+      "message": "Are you sure you want to delete this page?"
+   },
+   "modal_delete_warning": {
+      "message": "All annotations on this page will be permanently removed from this device. Before deleting, you may want to sync your data to ensure it's backed up."
+   },
+   "new_url": {
+      "message": "New URL"
+   },
+   "next": {
+      "message": "Next"
+   },
+   "no_page": {
+      "message": "No pages found on this device!"
+   },
+   "note_placeholder": {
+      "message": "Enter your comment & press ✔ or Esc"
+   },
+   "page": {
+      "message": "Page"
+   },
+   "page_comment": {
+      "message": "Page Comment"
+   },
+   "pages": {
+      "message": "Pages"
+   },
+   "pass": {
+      "message": "Password"
+   },
+   "prev": {
+      "message": "Previous"
+   },
+   "print": {
+      "message": "Print"
+   },
+   "q_highlighter": {
+      "message": "Quick Highlighter"
+   },
+   "rate": {
+      "message": "Rate us"
+   },
+   "refresh": {
+      "message": "Refresh"
+   },
+   "report_bug": {
+      "message": "Report a Bug"
+   },
+   "report_bug_support": {
+      "message": "Support us to fix bugs faster!"
+   },
+   "resync_intro": {
+      "message": "\u003Cp>Your data has been successfully synchronized with the cloud. To view and use the newly imported highlights, please refresh the page and reactivate ZetaMarker.\u003C/p>"
+   },
+   "retry": {
+      "message": "Retry"
+   },
+   "search_placeholder": {
+      "message": "Type keywords to search..."
+   },
+   "setting": {
+      "message": "Settings"
+   },
+   "setting_notice": {
+      "message": "Notice: Changes will be applied upon next activation of the extension."
+   },
+   "setting_title_shortcut": {
+      "message": "Adjust Shortcuts"
+   },
+   "setting_title_theme": {
+      "message": "Default theme"
+   },
+   "setting_title_toolbar": {
+      "message": "Default toolbar"
+   },
+   "sidebar": {
+      "message": "Sidebar"
+   },
+   "sort_earliest": {
+      "message": "Sort by Earliest"
+   },
+   "sort_latest": {
+      "message": "Sort by Latest"
+   },
+   "sort_position": {
+      "message": "Sort by Position"
+   },
+   "steps_reproduce": {
+      "message": "Steps to Reproduce"
+   },
+   "steps_reproduce_placeholder": {
+      "message": "1. Do this...\n2. Then this...\n3. Issue occurs"
+   },
+   "submit_bug": {
+      "message": "Submit Bug Report"
+   },
+   "submit_bug_err": {
+      "message": "Please fill in all fields before submitting."
+   },
+   "success_fetch_pages": {
+      "message": "$1 Pages fetched! Fetch annotations for each page."
+   },
+   "success_fetch_pages_zero": {
+      "message": "No new pages found in the cloud."
+   },
+   "success_login": {
+      "message": "Success: You have logged in."
+   },
+   "success_logout": {
+      "message": "You have successfully logged out."
+   },
+   "success_sync": {
+      "message": "Sync completed successfully"
+   },
+   "support_us": {
+      "message": "Support Us"
+   },
+   "sync_check_intro": {
+      "message": "\u003Cp>Your changes are successfully synchronized with the cloud storage. We automatically reflect your updates to the cloud every 10 seconds to ensure everything stays up-to-date.\u003C/p>"
+   },
+   "sync_fail_intro": {
+      "message": "\u003Cp>Some of your changes couldn't be reflected to the cloud due to a synchronization issue. Don't worry, we automatically attempt to synchronize every 10 seconds.\u003C/p>"
+   },
+   "sync_no_found": {
+      "message": "Data deleted on other devices"
+   },
+   "sync_no_found_intro": {
+      "message": "\u003Cp>The data on this page has been deleted on other devices. Please refresh the page and reactivate ZetaMarker to update the content.\u003C/p>"
+   },
+   "synced": {
+      "message": "Synced"
+   },
+   "tip_app": {
+      "message": "Open app"
+   },
+   "txt_no_annotation": {
+      "message": "No annotations detected"
+   },
+   "txt_no_annotation_sub": {
+      "message": "Sync to view annotations from other devices!"
+   },
+   "txt_or": {
+      "message": "OR"
+   },
+   "updated": {
+      "message": "Updated"
+   },
+   "url_placeholder": {
+      "message": "Paste the URL from your browser's address bar"
+   }
+}

@@ -1,0 +1,52 @@
+{
+   "action": {
+      "default_icon": {
+         "128": "icons/logo-128.png",
+         "16": "icons/logo-16.png",
+         "32": "icons/logo-32.png",
+         "48": "icons/logo-48.png",
+         "96": "icons/logo-96.png"
+      },
+      "default_title": "ZetaMarker"
+   },
+   "background": {
+      "service_worker": "w.js",
+      "type": "module"
+   },
+   "commands": {
+      "iJ": {
+         "description": "__MSG_activate_shortcut__",
+         "suggested_key": {
+            "default": "Ctrl+Shift+K",
+            "mac": "Command+Shift+K"
+         }
+      }
+   },
+   "default_locale": "en",
+   "description": "__MSG_extdesc__",
+   "externally_connectable": {
+      "ids": [ "efmpofoemibeochefpdgajaaoliaehji" ]
+   },
+   "host_permissions": [ "file:///*" ],
+   "icons": {
+      "128": "icons/logo-128.png",
+      "16": "icons/logo-16.png",
+      "32": "icons/logo-32.png",
+      "48": "icons/logo-48.png",
+      "96": "icons/logo-96.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA7R4YlvCyQOhCYxhM4Bg+bvUm/tco5lQgMHv3fNYS6Y2iAVGfgvVPBgQZS/oqSPT4vpTL6h+I2+vPr63uezGgXZnZokuB0vHyMbe0izuTHmX0rgI7LwpoU0n/zFHKqXw3NIDVlHSr+/f7ZdhwRDCAPvhuV95xwShQYcoef9eM9F/TfiXHkJqMbfpQAIxK8lfOuscbYXcpdsnJ2ou9s2oziCBwE2O5dCD8xMgVOqbZ6tDV85iZdREzMMAj7B1BYCI6xN2ZKCRbiJlk5MCRb289DA+B0czuHqHjUjGUZJh25vQLT3ag6Ob+zDX5Y5iclWZNz7A81SSIdhaF0BDfX6wIXwIDAQAB",
+   "manifest_version": 3,
+   "name": "__MSG_extname__",
+   "options_ui": {
+      "open_in_tab": true,
+      "page": "p.html"
+   },
+   "permissions": [ "storage", "activeTab", "scripting", "identity" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "7.4",
+   "web_accessible_resources": [ {
+      "matches": [ "http://*/*", "https://*/*", "*://*/*", "file:///*" ],
+      "resources": [ "icons/*", "viewer/*" ]
+   } ]
+}

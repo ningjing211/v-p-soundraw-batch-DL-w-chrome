@@ -1,0 +1,32 @@
+{
+   "app_desc": {
+      "message": "A Chrome extension to convert Chinese text between Simplified or Traditional Chinese characters."
+   },
+   "app_name": {
+      "message": "Simplified-Traditional Chinese Characters Conversion"
+   },
+   "copy": {
+      "message": "Copy"
+   },
+   "download_desc": {
+      "message": "Version 5.1"
+   },
+   "download_link": {
+      "message": "Get This"
+   },
+   "fanti": {
+      "message": "to Traditional(繁體)"
+   },
+   "flush": {
+      "message": "Reset"
+   },
+   "jianti": {
+      "message": "to Simplified(简体)"
+   },
+   "share_on_fb": {
+      "message": "Share on Facebook"
+   },
+   "share_on_tw": {
+      "message": "Share on Twitter"
+   }
+}

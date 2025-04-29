@@ -1,0 +1,305 @@
+{
+   "activate_shortcut": {
+      "message": "Activer ZetaMarker"
+   },
+   "auto_intro": {
+      "message": "\u003Cp style='margin-top:15px'>Vos données sur toute page visitée seront désormais synchronisées automatiquement avec le cloud chaque fois que vous activez ZetaMarker. De plus, toutes les modifications apportées à la page seront automatiquement enregistrées dans le cloud. Cela élimine la nécessité d'une synchronisation manuelle, rendant la gestion de vos données plus rapide et plus facile.\u003C/p>\u003Cp>Si vous préférez ne pas synchroniser automatiquement vos données avec le cloud, vous pouvez vous déconnecter de votre compte.\u003C/p>"
+   },
+   "auto_log_txt": {
+      "message": "Vous êtes actuellement connecté."
+   },
+   "auto_title": {
+      "message": "Synchronisation Automatique"
+   },
+   "browser": {
+      "message": "Navigateur"
+   },
+   "btn_google": {
+      "message": "Continuer avec Google"
+   },
+   "btn_login": {
+      "message": "Se connecter à mon compte"
+   },
+   "btn_signup": {
+      "message": "Créer un compte?"
+   },
+   "btn_url": {
+      "message": "Modifier l'URL"
+   },
+   "cancel": {
+      "message": "Annuler"
+   },
+   "close": {
+      "message": "Fermer"
+   },
+   "cloud_check": {
+      "message": "Les données sont synchronisées"
+   },
+   "cloud_fail": {
+      "message": "Erreur de synchronisation. Cliquez pour réessayer."
+   },
+   "cloud_slash": {
+      "message": "Connectez-vous pour synchroniser"
+   },
+   "confirm": {
+      "message": "Confirmer"
+   },
+   "copied": {
+      "message": "Copié!"
+   },
+   "copy": {
+      "message": "Copier"
+   },
+   "copy_all": {
+      "message": "Copier tout"
+   },
+   "current_version": {
+      "message": "version 7.4"
+   },
+   "dark": {
+      "message": "Thème sombre"
+   },
+   "delete": {
+      "message": "Supprimer"
+   },
+   "dismiss": {
+      "message": "Ignorer"
+   },
+   "edit_title": {
+      "message": "Modifier le titre"
+   },
+   "email": {
+      "message": "Email"
+   },
+   "error": {
+      "message": "Erreur: quelque chose s'est mal passé! Veuillez réessayer."
+   },
+   "error_another_user": {
+      "message": "Appareil utilisé par un autre utilisateur."
+   },
+   "error_google_login": {
+      "message": "l'authentification Google a échoué."
+   },
+   "error_invalid_email": {
+      "message": "Email invalide"
+   },
+   "error_invalid_pass": {
+      "message": "Mot de passe incorrect"
+   },
+   "error_login": {
+      "message": "Adresse e-mail ou mot de passe incorrect."
+   },
+   "error_url": {
+      "message": "Entrez une URL ou un chemin de fichier PDF valide."
+   },
+   "export": {
+      "message": "Exporter"
+   },
+   "extdesc": {
+      "message": "L'outil le plus respectueux de la vie privée pour surligner les pages web et les fichiers PDF."
+   },
+   "extname": {
+      "message": "Surligneur ZetaMarker - Web et PDF"
+   },
+   "fail_intro": {
+      "message": "\u003Cp>Nous n'avons pas pu synchroniser avec le cloud. Veuillez vérifier votre connexion internet. Vous pouvez réessayer de synchroniser maintenant ou ignorer ce message pour continuer à travailler hors ligne. Vos modifications seront synchronisées la prochaine fois que vous visiterez cette page.\u003C/p>"
+   },
+   "failed_sync": {
+      "message": "Échec de la synchronisation des données"
+   },
+   "feedback": {
+      "message": "Feedback"
+   },
+   "fetch_pages": {
+      "message": "Récupérer des pages depuis le cloud"
+   },
+   "forgot_pass": {
+      "message": "Mot de passe oublié?"
+   },
+   "guide": {
+      "message": "Guide de l'utilisateur"
+   },
+   "highlights": {
+      "message": "Surlignements"
+   },
+   "issue_summary": {
+      "message": "Résumé du problème"
+   },
+   "issue_summary_placeholder": {
+      "message": "Décrivez brièvement le problème"
+   },
+   "light": {
+      "message": "Thème clair"
+   },
+   "loadig_login": {
+      "message": "Connectez-vous..."
+   },
+   "login": {
+      "message": "Se connecter"
+   },
+   "login_to_sync": {
+      "message": "Connectez-vous pour synchroniser. Actualisez si vous êtes déjà connecté ailleurs."
+   },
+   "logout": {
+      "message": "Se déconnecter"
+   },
+   "minimal": {
+      "message": "Flottant"
+   },
+   "modal_delete_title": {
+      "message": "Êtes-vous sûr de vouloir supprimer cette page?"
+   },
+   "modal_delete_warning": {
+      "message": "Toutes les annotations sur cette page seront définitivement supprimées de cet appareil. Avant de supprimer, vous souhaiterez peut-être synchroniser vos données pour vous assurer qu'elles sont sauvegardées."
+   },
+   "new_url": {
+      "message": "Nouvelle URL"
+   },
+   "next": {
+      "message": "Suivant"
+   },
+   "no_page": {
+      "message": "Aucune page trouvée sur cet appareil!"
+   },
+   "note_placeholder": {
+      "message": "Entrez votre commentaire et appuyez sur ✔ ou Esc"
+   },
+   "page": {
+      "message": "Page"
+   },
+   "page_comment": {
+      "message": "Commentaire de la page"
+   },
+   "pages": {
+      "message": "Pages"
+   },
+   "pass": {
+      "message": "Mot de passe"
+   },
+   "prev": {
+      "message": "Précédent"
+   },
+   "print": {
+      "message": "Imprimer"
+   },
+   "q_highlighter": {
+      "message": "Surligneur rapide"
+   },
+   "rate": {
+      "message": "Évaluez-nous"
+   },
+   "refresh": {
+      "message": "Rafraîchir"
+   },
+   "report_bug": {
+      "message": "Signaler un bug"
+   },
+   "report_bug_support": {
+      "message": "Aidez-nous à corriger les bugs plus rapidement!"
+   },
+   "resync_intro": {
+      "message": "\u003Cp>Vos données ont été synchronisées avec succès avec le cloud. Pour voir et utiliser les nouveaux surlignages importés, veuillez rafraîchir la page et réactiver ZetaMarker.\u003C/p>"
+   },
+   "retry": {
+      "message": "Réessayer"
+   },
+   "search_placeholder": {
+      "message": "Saisissez des mots-clés pour rechercher..."
+   },
+   "setting": {
+      "message": "Paramètre"
+   },
+   "setting_notice": {
+      "message": "Avis : Les changements seront appliqués lors de la prochaine activation de l'extension."
+   },
+   "setting_title_shortcut": {
+      "message": "Ajuster les raccourcis"
+   },
+   "setting_title_theme": {
+      "message": "Thème par défaut"
+   },
+   "setting_title_toolbar": {
+      "message": "Barre d'outils par défaut"
+   },
+   "sidebar": {
+      "message": "Barre latérale"
+   },
+   "sort_earliest": {
+      "message": "Trier par Plus Ancien"
+   },
+   "sort_latest": {
+      "message": "Trier par Plus Récent"
+   },
+   "sort_position": {
+      "message": "Trier par Position"
+   },
+   "steps_reproduce": {
+      "message": "Étapes pour reproduire"
+   },
+   "steps_reproduce_placeholder": {
+      "message": "1. Faites ceci...\n2. Puis ceci...\n3. Le problème se produit"
+   },
+   "submit_bug": {
+      "message": "Soumettre un rapport de bug"
+   },
+   "submit_bug_err": {
+      "message": "Veuillez remplir tous les champs avant de soumettre."
+   },
+   "success_fetch_pages": {
+      "message": "$1 pages récupérées! Récupérez les annotations pour chaque page."
+   },
+   "success_fetch_pages_zero": {
+      "message": "Aucune nouvelle page trouvée dans le cloud."
+   },
+   "success_login": {
+      "message": "Succès : vous êtes connecté"
+   },
+   "success_logout": {
+      "message": "Succès: vous êtes déconnecté."
+   },
+   "success_sync": {
+      "message": "Succès : Synchronisation terminée."
+   },
+   "support_us": {
+      "message": "Soutenez-nous"
+   },
+   "sync_check_intro": {
+      "message": "\u003Cp>Vos modifications ont été synchronisées avec succès avec le stockage cloud. Nous mettons automatiquement à jour vos données dans le cloud toutes les 10 secondes pour que tout reste à jour.\u003C/p>"
+   },
+   "sync_fail_intro": {
+      "message": "\u003Cp>Certaines de vos modifications n'ont pas pu être synchronisées avec le cloud en raison d'un problème de synchronisation. Pas d'inquiétude, nous essayons automatiquement de synchroniser toutes les 10 secondes.\u003C/p>"
+   },
+   "sync_no_found": {
+      "message": "Données supprimées sur d'autres appareils"
+   },
+   "sync_no_found_intro": {
+      "message": "\u003Cp>Les données de cette page ont été supprimées sur d'autres appareils. Veuillez rafraîchir la page et réactiver ZetaMarker pour mettre à jour le contenu.\u003C/p>"
+   },
+   "synced": {
+      "message": "Synchronisé"
+   },
+   "tip_app": {
+      "message": "Ouvrir app"
+   },
+   "tip_comment": {
+      "message": "Ouvrir le commentaire"
+   },
+   "txt_no_annotation": {
+      "message": "Aucune annotation détectée."
+   },
+   "txt_no_annotation_sub": {
+      "message": "Synchronisez pour voir les annotations depuis d'autres appareils!"
+   },
+   "txt_or": {
+      "message": "OU"
+   },
+   "txt_search_result": {
+      "message": "$1 résultats de recherche sur cet appareil."
+   },
+   "updated": {
+      "message": "Modifié"
+   },
+   "url_placeholder": {
+      "message": "Collez l'URL depuis la barre d'adresse de votre navigateur"
+   }
+}

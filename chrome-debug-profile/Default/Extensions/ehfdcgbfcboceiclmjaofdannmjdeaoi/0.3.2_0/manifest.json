@@ -1,0 +1,33 @@
+{
+   "action": {
+   },
+   "background": {
+      "service_worker": "worker.js"
+   },
+   "commands": {
+      "_execute_action": {
+      }
+   },
+   "description": "Grab and download media (image and video) sources by monitoring network (like FlashGot)",
+   "homepage_url": "https://webextension.org/listing/bulk-media-downloader.html",
+   "host_permissions": [ "*://*/*" ],
+   "icons": {
+      "128": "/data/icons/128.png",
+      "16": "/data/icons/16.png",
+      "256": "/data/icons/256.png",
+      "32": "/data/icons/32.png",
+      "48": "/data/icons/48.png",
+      "512": "/data/icons/512.png",
+      "64": "/data/icons/64.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAm+I91A1PeCpDiPLmcP8DFx6Y5zOmuy4NwVjWTzMSUi3Rx9eJ+b4+32RW37f5jQjyjfxZAOER6aYz+p/t40LUGIGzaQippscwvDEBkd8iZwlq2w9AQKtbMoUrsK+xaKiknISq4Z/O0vyMtLVwP/nRlYc5kznChhvwOfhn8091WyeQ9cafu0uecLRhSv8hNnr+pCOMy1AbWPpfyorlPoReqy/XPnTRo7efI9FUHwutCbT5K8bDI/jF4jity0Yy/OOYq1kyZYywGZPQnkh9A3yBGPH/KMbs48zaf6gZzEYx6is1J68X5ZC/uToImhUhFMx48itOlE83NuIF3ic7gWsEUwIDAQAB",
+   "manifest_version": 3,
+   "name": "Bulk Media Downloader",
+   "permissions": [ "storage", "webRequest", "downloads", "notifications", "contextMenus" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "0.3.2",
+   "web_accessible_resources": [ {
+      "matches": [ "*://*/*" ],
+      "resources": [ "/data/inject/index.html" ]
+   } ]
+}

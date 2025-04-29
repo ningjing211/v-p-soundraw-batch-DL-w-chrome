@@ -1,0 +1,302 @@
+{
+   "activate_shortcut": {
+      "message": "啟動 ZetaMarker"
+   },
+   "auto_intro": {
+      "message": "\u003Cp style='margin-top:15px'>现在, 只要您在访问的页面上启用ZetaMarker, 您的数据将自动与云端同步。此外，页面上的任何更改将自动保存到云端。这消除了手动同步的需要，使管理数据变得更加快速和便捷。\u003C/p>\u003Cp>如果您不想自動將資料同步到雲端，您可以登出您的帳戶。\u003C/p>"
+   },
+   "auto_log_txt": {
+      "message": "您当前已登录。"
+   },
+   "auto_title": {
+      "message": "自動同步"
+   },
+   "browser": {
+      "message": "瀏覽器"
+   },
+   "btn_google": {
+      "message": "繼續使用 Google"
+   },
+   "btn_login": {
+      "message": "登入我的帳戶"
+   },
+   "btn_signup": {
+      "message": "創建帳戶？"
+   },
+   "btn_url": {
+      "message": "編輯URL"
+   },
+   "cancel": {
+      "message": "取消"
+   },
+   "close": {
+      "message": "關閉"
+   },
+   "cloud_check": {
+      "message": "資料已同步"
+   },
+   "cloud_fail": {
+      "message": "同步錯誤。點擊重試。"
+   },
+   "cloud_slash": {
+      "message": "登入以同步"
+   },
+   "confirm": {
+      "message": "確認"
+   },
+   "copied": {
+      "message": "已複製！"
+   },
+   "copy": {
+      "message": "複製"
+   },
+   "copy_all": {
+      "message": "複製全部"
+   },
+   "current_version": {
+      "message": "版本 7.4"
+   },
+   "dark": {
+      "message": "暗黑主題"
+   },
+   "delete": {
+      "message": "刪除"
+   },
+   "dismiss": {
+      "message": "忽略"
+   },
+   "edit_title": {
+      "message": "編輯標題"
+   },
+   "email": {
+      "message": "電子郵件"
+   },
+   "error": {
+      "message": "錯誤：出現問題！請重試。"
+   },
+   "error_another_user": {
+      "message": "設備被其他用戶使用。"
+   },
+   "error_google_login": {
+      "message": "Google 驗證失敗。"
+   },
+   "error_invalid_email": {
+      "message": "不合規電郵"
+   },
+   "error_invalid_pass": {
+      "message": "無效的密碼"
+   },
+   "error_login": {
+      "message": "電子郵件地址或密碼錯誤"
+   },
+   "error_url": {
+      "message": "輸入有效的 URL 或 PDF 檔案路徑。"
+   },
+   "export": {
+      "message": "匯出"
+   },
+   "extdesc": {
+      "message": "用於突出顯示線上頁面和 PDF 文件的最注重隱私的工具。"
+   },
+   "extname": {
+      "message": "ZetaMarker 螢光重點標註工具 - 網頁和 PDF"
+   },
+   "fail_intro": {
+      "message": "\u003Cp>無法與雲端同步。請檢查您的網路連線。您可以立即重試同步，或忽略此訊息繼續離線工作。您的更改將在下次訪問此頁面時同步。\u003C/p>"
+   },
+   "failed_sync": {
+      "message": "資料同步失敗"
+   },
+   "feedback": {
+      "message": "回饋意見"
+   },
+   "fetch_pages": {
+      "message": "從雲端擷取頁面"
+   },
+   "forgot_pass": {
+      "message": "忘記密碼？"
+   },
+   "guide": {
+      "message": "用戶指南"
+   },
+   "highlights": {
+      "message": "強調"
+   },
+   "issue_summary": {
+      "message": "問題摘要"
+   },
+   "issue_summary_placeholder": {
+      "message": "請簡要描述問題"
+   },
+   "light": {
+      "message": "明亮主題"
+   },
+   "loadig_login": {
+      "message": "登入中..."
+   },
+   "login": {
+      "message": "登入"
+   },
+   "login_to_sync": {
+      "message": "登入以同步。 如果已經在其他地方登錄，請刷新。"
+   },
+   "logout": {
+      "message": "登出"
+   },
+   "minimal": {
+      "message": "浮動工具列"
+   },
+   "modal_delete_title": {
+      "message": "您確定要刪除此頁面嗎？"
+   },
+   "modal_delete_warning": {
+      "message": "此頁面上的所有註釋將從該裝置中永久刪除。 在刪除之前，您可能需要同步資料以確保其已備份。"
+   },
+   "new_url": {
+      "message": "新URL"
+   },
+   "next": {
+      "message": "下一個"
+   },
+   "no_page": {
+      "message": "暫無頁面。開始突顯!"
+   },
+   "note_placeholder": {
+      "message": "輸入您的評論並按✔或Esc。"
+   },
+   "page": {
+      "message": "頁"
+   },
+   "page_comment": {
+      "message": "頁面評論"
+   },
+   "pages": {
+      "message": "頁面"
+   },
+   "pass": {
+      "message": "密碼"
+   },
+   "prev": {
+      "message": "上一個"
+   },
+   "print": {
+      "message": "列印"
+   },
+   "q_highlighter": {
+      "message": "快速螢光筆"
+   },
+   "rate": {
+      "message": "評價我們"
+   },
+   "refresh": {
+      "message": "重新整理"
+   },
+   "report_bug": {
+      "message": "報告錯誤"
+   },
+   "report_bug_support": {
+      "message": "支持我們，以更快修復錯誤！"
+   },
+   "resync_intro": {
+      "message": "\u003Cp>您的資料已成功與雲端同步。若要查看並使用新匯入的重點, 請重新整理頁面並重新啟動ZetaMarker。\u003C/p>"
+   },
+   "retry": {
+      "message": "重試"
+   },
+   "search_placeholder": {
+      "message": "輸入關鍵字進行搜索..."
+   },
+   "setting": {
+      "message": "設定"
+   },
+   "setting_notice": {
+      "message": "注意：更改將在下次啟用擴展時應用。"
+   },
+   "setting_title_shortcut": {
+      "message": "調整快速鍵"
+   },
+   "setting_title_theme": {
+      "message": "預設主題"
+   },
+   "setting_title_toolbar": {
+      "message": "預設工具列"
+   },
+   "sidebar": {
+      "message": "側邊欄"
+   },
+   "sort_earliest": {
+      "message": "按最早排序"
+   },
+   "sort_latest": {
+      "message": "按最新排序"
+   },
+   "sort_position": {
+      "message": "按位置排序"
+   },
+   "steps_reproduce": {
+      "message": "復現步驟"
+   },
+   "steps_reproduce_placeholder": {
+      "message": "1. 做這個...\n2. 然後這個...\n3. 出現問題"
+   },
+   "submit_bug": {
+      "message": "提交錯誤報告"
+   },
+   "submit_bug_err": {
+      "message": "提交前請填寫所有欄位。"
+   },
+   "success_fetch_pages": {
+      "message": "已取得 $1 頁！ 取得每個頁面的註釋。"
+   },
+   "success_fetch_pages_zero": {
+      "message": "沒有發現新頁面。"
+   },
+   "success_login": {
+      "message": "成功：您已登入。"
+   },
+   "success_logout": {
+      "message": "成功：您已登出。"
+   },
+   "success_sync": {
+      "message": "成功：同步完成。"
+   },
+   "support_us": {
+      "message": "支持我們"
+   },
+   "sync_check_intro": {
+      "message": "\u003Cp>您的更改已成功同步至雲端存儲。我們每10秒自動將您的更新反映到雲端, 以確保所有內容保持最新。\u003C/p>"
+   },
+   "sync_fail_intro": {
+      "message": "\u003Cp>由於同步問題, 部分更改未能反映到雲端。別擔心, 我們每10秒會自動嘗試同步。\u003C/p>"
+   },
+   "sync_no_found": {
+      "message": "其他裝置上的資料已被刪除"
+   },
+   "sync_no_found_intro": {
+      "message": "\u003Cp>此頁面的資料已在其他裝置上被刪除。請重新整理頁面並重新啟動ZetaMarker以更新內容。\u003C/p>"
+   },
+   "synced": {
+      "message": "已同步"
+   },
+   "tip_app": {
+      "message": "打開App"
+   },
+   "tip_comment": {
+      "message": "打開評論"
+   },
+   "txt_no_annotation": {
+      "message": "未檢測到任何標註"
+   },
+   "txt_no_annotation_sub": {
+      "message": "同步以查看來自其他設備的標註！"
+   },
+   "txt_or": {
+      "message": "或"
+   },
+   "updated": {
+      "message": "已更新"
+   },
+   "url_placeholder": {
+      "message": "從瀏覽器地址欄貼上URL"
+   }
+}

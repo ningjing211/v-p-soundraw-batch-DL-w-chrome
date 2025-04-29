@@ -1,0 +1,21 @@
+2025/04/29-10:48:32.020 8572 Reusing MANIFEST /Users/flowasitgoes/v-p/chrome-debug-profile/Default/Sync Data/LevelDB/MANIFEST-000001
+2025/04/29-10:48:32.022 8572 Recovering log #10
+2025/04/29-10:48:32.023 8572 Reusing old log /Users/flowasitgoes/v-p/chrome-debug-profile/Default/Sync Data/LevelDB/000010.log 
+2025/04/29-10:48:52.781 8582 Level-0 table #14: started
+2025/04/29-10:48:52.787 8582 Level-0 table #14: 95536 bytes OK
+2025/04/29-10:48:52.790 8582 Delete type=0 #10
+2025/04/29-11:37:41.710 8585 Level-0 table #16: started
+2025/04/29-11:37:41.717 8585 Level-0 table #16: 89974 bytes OK
+2025/04/29-11:37:41.720 8585 Delete type=0 #13
+2025/04/29-11:37:41.731 8585 Compacting 4@0 + 1@1 files
+2025/04/29-11:37:41.735 8585 Generated table #17@0: 95 keys, 12321 bytes
+2025/04/29-11:37:41.735 8585 Compacted 4@0 + 1@1 files => 12321 bytes
+2025/04/29-11:37:41.736 8585 compacted to: files[ 0 1 1 0 0 0 0 ]
+2025/04/29-11:37:41.736 8585 Delete type=2 #14
+2025/04/29-11:37:41.736 8585 Delete type=2 #16
+2025/04/29-11:37:41.736 8585 Delete type=2 #7
+2025/04/29-11:37:41.736 8585 Delete type=2 #11
+2025/04/29-11:37:41.736 8585 Delete type=2 #9
+2025/04/29-12:36:15.388 8574 Level-0 table #19: started
+2025/04/29-12:36:15.393 8574 Level-0 table #19: 89219 bytes OK
+2025/04/29-12:36:15.397 8574 Delete type=0 #15

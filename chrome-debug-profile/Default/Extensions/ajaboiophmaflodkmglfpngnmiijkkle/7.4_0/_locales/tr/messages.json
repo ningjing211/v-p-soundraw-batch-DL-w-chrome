@@ -1,0 +1,302 @@
+{
+   "activate_shortcut": {
+      "message": "ZetaMarker'ı etkinleştir"
+   },
+   "auto_intro": {
+      "message": "\u003Cp style='margin-top:15px'>Artık, ZetaMarker'ı etkinleştirdiğinizde, ziyaret ettiğiniz herhangi bir sayfadaki verileriniz otomatik olarak bulutla senkronize edilecektir. Ayrıca, sayfadaki herhangi bir değişiklik otomatik olarak buluta kaydedilecektir. Bu, manuel senkronizasyon ihtiyacını ortadan kaldırarak verilerinizi daha hızlı ve kolay bir şekilde yönetmenizi sağlar.\u003C/p>\u003Cp>Verilerinizi bulutla otomatik olarak senkronize etmek istemiyorsanız, hesabınızdan çıkış yapabilirsiniz.\u003C/p>"
+   },
+   "auto_log_txt": {
+      "message": "Şu anda giriş yapmışsınız."
+   },
+   "auto_title": {
+      "message": "Otomatik Senkronizasyon"
+   },
+   "browser": {
+      "message": "Tarayıcı"
+   },
+   "btn_google": {
+      "message": "Google ile devam et"
+   },
+   "btn_login": {
+      "message": "Hesabıma giriş yap"
+   },
+   "btn_signup": {
+      "message": "Hesap oluştur"
+   },
+   "btn_url": {
+      "message": "URL'yi Düzenle"
+   },
+   "cancel": {
+      "message": "İptal etmek"
+   },
+   "close": {
+      "message": "Kapat"
+   },
+   "cloud_check": {
+      "message": "Veriler senkronize edildi"
+   },
+   "cloud_fail": {
+      "message": "Senkronizasyon hatası. Tekrar denemek için tıklayın."
+   },
+   "cloud_slash": {
+      "message": "Senkronize etmek için giriş yapın"
+   },
+   "confirm": {
+      "message": "Onaylamak"
+   },
+   "copied": {
+      "message": "Kopyalandı!"
+   },
+   "copy": {
+      "message": "Kopyala"
+   },
+   "copy_all": {
+      "message": "Tümünü kopyala"
+   },
+   "current_version": {
+      "message": "sürüm 7.4"
+   },
+   "dark": {
+      "message": "Koyu tema"
+   },
+   "delete": {
+      "message": "Sil"
+   },
+   "dismiss": {
+      "message": "Kapat"
+   },
+   "edit_title": {
+      "message": "Başlığı düzenle"
+   },
+   "email": {
+      "message": "Email"
+   },
+   "error": {
+      "message": "Bir şeyler yanlış gitti! Lütfen tekrar deneyin."
+   },
+   "error_another_user": {
+      "message": "Cihaz başka bir kullanıcı tarafından kullanılıyor"
+   },
+   "error_google_login": {
+      "message": "Google kimlik doğrulama başarısız oldu."
+   },
+   "error_invalid_email": {
+      "message": "Geçersiz e-posta"
+   },
+   "error_invalid_pass": {
+      "message": "Geçersiz şifre"
+   },
+   "error_login": {
+      "message": "Yanlış eposta adresi veya şifre."
+   },
+   "error_url": {
+      "message": "Geçerli bir URL veya PDF dosya yolu girin."
+   },
+   "export": {
+      "message": "Dışa Aktar"
+   },
+   "extdesc": {
+      "message": "Çevrimiçi sayfalar ve PDF dosyalarını vurgulamak için en gizlilik dostu araç."
+   },
+   "extname": {
+      "message": "ZetaMarker Vurgulayıcı - Web ve PDF"
+   },
+   "fail_intro": {
+      "message": "\u003Cp>Bulut ile senkronize edilemedi. İnternet bağlantınızı kontrol edin. Şimdi senkronizasyonu tekrar deneyebilir veya bu mesajı kapatarak çevrimdışı çalışmaya devam edebilirsiniz. Değişiklikleriniz bu sayfayı bir sonraki ziyaretinizde senkronize edilecektir.\u003C/p>"
+   },
+   "failed_sync": {
+      "message": "Veriler senkronize edilemedi"
+   },
+   "feedback": {
+      "message": "Geribildirim"
+   },
+   "fetch_pages": {
+      "message": "Sayfaları bulut üzerinden al"
+   },
+   "forgot_pass": {
+      "message": "Şifrenizi unuttunuzmu?"
+   },
+   "guide": {
+      "message": "Kullanici rehberi"
+   },
+   "highlights": {
+      "message": "Vurgulamalar"
+   },
+   "issue_summary": {
+      "message": "Sorun özeti"
+   },
+   "issue_summary_placeholder": {
+      "message": "Sorunu kısaca açıklayın"
+   },
+   "light": {
+      "message": "Açık tema"
+   },
+   "loadig_login": {
+      "message": "Giriş yapılıyor..."
+   },
+   "login": {
+      "message": "Giriş yap"
+   },
+   "login_to_sync": {
+      "message": "Senkronizasyon için oturum açın. Zaten başka bir yerde oturum açtıysanız yenileyin."
+   },
+   "logout": {
+      "message": "Çıkış Yap"
+   },
+   "minimal": {
+      "message": "Yüzen araç çubuğu"
+   },
+   "modal_delete_title": {
+      "message": "Bu sayfayı silmek istediğinizden emin misiniz?"
+   },
+   "modal_delete_warning": {
+      "message": "Bu sayfadaki tüm ek açıklamalar bu cihazdan kalıcı olarak kaldırılacaktır. Silmeden önce, yedeklendiğinden emin olmak için verilerinizi senkronize etmek isteyebilirsiniz."
+   },
+   "new_url": {
+      "message": "Yeni URL"
+   },
+   "next": {
+      "message": "Sonraki"
+   },
+   "no_page": {
+      "message": "Bu cihazda sayfa bulunamadı!"
+   },
+   "note_placeholder": {
+      "message": "Yorumunuzu girip ✔ veya Esc tuşuna basın"
+   },
+   "page": {
+      "message": "Sayfa"
+   },
+   "page_comment": {
+      "message": "Sayfa Yorumu"
+   },
+   "pages": {
+      "message": "Sayfalar"
+   },
+   "pass": {
+      "message": "Şifre"
+   },
+   "prev": {
+      "message": "Önceki"
+   },
+   "print": {
+      "message": "Yazdır"
+   },
+   "q_highlighter": {
+      "message": "Hızlı vurgulayıcı"
+   },
+   "rate": {
+      "message": "Bizi değerlendirin"
+   },
+   "refresh": {
+      "message": "Yenile"
+   },
+   "report_bug": {
+      "message": "Hata bildir"
+   },
+   "report_bug_support": {
+      "message": "Hataları daha hızlı düzeltmemize yardım edin!"
+   },
+   "resync_intro": {
+      "message": "\u003Cp>Verileriniz bulut ile başarıyla senkronize edildi. Yeni içe aktarılan vurguları görüntülemek ve kullanmak için sayfayı yenileyin ve ZetaMarker'ı tekrar etkinleştirin.\u003C/p>"
+   },
+   "retry": {
+      "message": "Tekrar Dene"
+   },
+   "search_placeholder": {
+      "message": "Arama yapmak için anahtar kelimeleri yazın..."
+   },
+   "setting": {
+      "message": "Ayarlar"
+   },
+   "setting_notice": {
+      "message": "Değişiklikler, bir sonraki uzantının etkinleştirilmesinde uygulanacaktır."
+   },
+   "setting_title_shortcut": {
+      "message": "Kısayolları Ayarla"
+   },
+   "setting_title_theme": {
+      "message": "Varsayılan tema"
+   },
+   "setting_title_toolbar": {
+      "message": "Varsayılan araç çubuğu"
+   },
+   "sidebar": {
+      "message": "Kenar Çubuğu"
+   },
+   "sort_earliest": {
+      "message": "En Eskiye Göre Sırala"
+   },
+   "sort_latest": {
+      "message": "En Yeniye Göre Sırala"
+   },
+   "sort_position": {
+      "message": "Konuma Göre Sırala"
+   },
+   "steps_reproduce": {
+      "message": "Yeniden üretme adımları"
+   },
+   "steps_reproduce_placeholder": {
+      "message": "1. Bunu yapın...\n2. Sonra bunu yapın...\n3. Sorun meydana gelir"
+   },
+   "submit_bug": {
+      "message": "Hata raporu gönder"
+   },
+   "submit_bug_err": {
+      "message": "Lütfen göndermeden önce tüm alanları doldurun."
+   },
+   "success_fetch_pages": {
+      "message": "$1 Sayfa getirildi! Her sayfa için ek açıklamaları getirin."
+   },
+   "success_fetch_pages_zero": {
+      "message": "Yeni sayfa bulunamadı."
+   },
+   "success_login": {
+      "message": "Başarı: Giriş yaptınız."
+   },
+   "success_logout": {
+      "message": "Başarı: Çıkış yaptınız."
+   },
+   "success_sync": {
+      "message": "Başarılı: Senkronizasyon tamamlandı."
+   },
+   "support_us": {
+      "message": "Bizi Destekleyin"
+   },
+   "sync_check_intro": {
+      "message": "\u003Cp>Değişiklikleriniz bulut depolama ile başarıyla senkronize edildi. Her şeyin güncel kalmasını sağlamak için verilerinizi her 10 saniyede bir otomatik olarak buluta yansıtıyoruz.\u003C/p>"
+   },
+   "sync_fail_intro": {
+      "message": "\u003Cp>Bir senkronizasyon sorunu nedeniyle bazı değişiklikler buluta yansıtılamadı. Endişelenmeyin, her 10 saniyede bir otomatik olarak senkronizasyon denemesi yapıyoruz.\u003C/p>"
+   },
+   "sync_no_found": {
+      "message": "Veriler diğer cihazlarda silindi"
+   },
+   "sync_no_found_intro": {
+      "message": "\u003Cp>Bu sayfadaki veriler diğer cihazlarda silindi. İçeriği güncellemek için sayfayı yenileyin ve ZetaMarker'ı yeniden etkinleştirin.\u003C/p>"
+   },
+   "synced": {
+      "message": "Senkronize edildi"
+   },
+   "tip_app": {
+      "message": "Uygulamayı aç"
+   },
+   "tip_comment": {
+      "message": "Yorumu güncelle"
+   },
+   "txt_no_annotation": {
+      "message": "Hiç vurgu bulunamadı."
+   },
+   "txt_no_annotation_sub": {
+      "message": "Diğer cihazlardan vurguları görüntülemek için senkronize et!"
+   },
+   "txt_or": {
+      "message": "VEYA"
+   },
+   "updated": {
+      "message": "Güncellendi"
+   },
+   "url_placeholder": {
+      "message": "Tarayıcınızın adres çubuğundaki URL yi yapıştırın"
+   }
+}

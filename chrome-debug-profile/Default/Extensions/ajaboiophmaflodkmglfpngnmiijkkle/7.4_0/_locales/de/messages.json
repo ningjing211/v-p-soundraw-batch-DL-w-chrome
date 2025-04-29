@@ -1,0 +1,299 @@
+{
+   "activate_shortcut": {
+      "message": "ZetaMarker aktivieren"
+   },
+   "auto_intro": {
+      "message": "\u003Cp style='margin-top:15px'>Ihre Daten auf besuchten Seiten werden jetzt automatisch mit der Cloud synchronisiert, sobald Sie ZetaMarker aktivieren. Außerdem werden alle Änderungen, die an der Seite vorgenommen werden, automatisch in der Cloud gespeichert. Dies macht eine manuelle Synchronisierung überflüssig und erleichtert die Verwaltung Ihrer Daten.\u003C/p>\u003Cp>Wenn Sie Ihre Daten nicht automatisch mit der Cloud synchronisieren möchten, können Sie sich von Ihrem Konto abmelden.\u003C/p>"
+   },
+   "auto_log_txt": {
+      "message": "Sie sind derzeit angemeldet."
+   },
+   "auto_title": {
+      "message": "Automatische Synchronisierung"
+   },
+   "browser": {
+      "message": "Browser"
+   },
+   "btn_google": {
+      "message": "Mit Google fortfahren"
+   },
+   "btn_login": {
+      "message": "In mein Konto anmelden"
+   },
+   "btn_signup": {
+      "message": "Konto erstellen?"
+   },
+   "btn_url": {
+      "message": "URL bearbeiten"
+   },
+   "cancel": {
+      "message": "Abbrechen"
+   },
+   "close": {
+      "message": "Schließen"
+   },
+   "cloud_check": {
+      "message": "Daten sind synchronisiert"
+   },
+   "cloud_fail": {
+      "message": "Synchronisierungsfehler. Klicken zum Wiederholen."
+   },
+   "cloud_slash": {
+      "message": "Anmelden, um zu synchronisieren"
+   },
+   "confirm": {
+      "message": "Bestätigen"
+   },
+   "copied": {
+      "message": "Kopiert!"
+   },
+   "copy": {
+      "message": "Kopieren"
+   },
+   "copy_all": {
+      "message": "Alles kopieren"
+   },
+   "current_version": {
+      "message": "version 7.4"
+   },
+   "dark": {
+      "message": "Dunkles"
+   },
+   "delete": {
+      "message": "Löschen"
+   },
+   "dismiss": {
+      "message": "Schließen"
+   },
+   "edit_title": {
+      "message": "Titel bearbeiten"
+   },
+   "email": {
+      "message": "Email"
+   },
+   "error": {
+      "message": "Etwas ist schiefgegangen!"
+   },
+   "error_another_user": {
+      "message": "Gerät wird von einem anderen Benutzer verwendet."
+   },
+   "error_google_login": {
+      "message": "Google-Authentifizierung fehlgeschlagen"
+   },
+   "error_invalid_email": {
+      "message": "Ungültige E-Mail-Adresse"
+   },
+   "error_invalid_pass": {
+      "message": "Ungültiges Passwort"
+   },
+   "error_login": {
+      "message": "Falsche E-Mail-Adresse oder Passwort"
+   },
+   "error_url": {
+      "message": "Geben Sie eine gültige URL oder einen gültigen PDF-Dateipfad ein."
+   },
+   "export": {
+      "message": "Exportieren"
+   },
+   "extdesc": {
+      "message": "Das datenschutzfreundliche Werkzeug zum Hervorheben von Webseiten und PDF-Dateien."
+   },
+   "extname": {
+      "message": "ZetaMarker Textmarker- PDF & Web"
+   },
+   "fail_intro": {
+      "message": "\u003Cp>Wir konnten nicht mit der Cloud synchronisieren. Bitte überprüfen Sie Ihre Internetverbindung. Sie können die Synchronisierung jetzt erneut versuchen oder diese Nachricht schließen, um offline weiterzuarbeiten. Ihre Änderungen werden beim nächsten Besuch dieser Seite synchronisiert.\u003C/p>"
+   },
+   "failed_sync": {
+      "message": "Daten konnten nicht synchronisiert werden"
+   },
+   "feedback": {
+      "message": "Feedback"
+   },
+   "fetch_pages": {
+      "message": "Seiten aus der Cloud abrufen"
+   },
+   "forgot_pass": {
+      "message": "Passwort vergessen?"
+   },
+   "guide": {
+      "message": "Hilfe"
+   },
+   "highlights": {
+      "message": "Markierungen"
+   },
+   "issue_summary": {
+      "message": "Problemzusammenfassung"
+   },
+   "issue_summary_placeholder": {
+      "message": "Beschreiben Sie das Problem kurz"
+   },
+   "light": {
+      "message": "Helle"
+   },
+   "loadig_login": {
+      "message": "Anmeldung..."
+   },
+   "login": {
+      "message": "Anmelden"
+   },
+   "login_to_sync": {
+      "message": "Anmelden zum Synchronisieren. Seite neu laden, wenn bereits anderswo angemeldet."
+   },
+   "logout": {
+      "message": "Abmelden"
+   },
+   "minimal": {
+      "message": "Schwebende Symbolleiste"
+   },
+   "modal_delete_title": {
+      "message": "Sind Sie sicher, dass Sie diese Seite löschen möchten?"
+   },
+   "modal_delete_warning": {
+      "message": "Alle Markierungen auf dieser Seite werden dauerhaft von diesem Gerät entfernt. Bevor Sie löschen, sollten Sie Ihre Daten synchronisieren, um sicherzustellen, dass sie gesichert sind."
+   },
+   "new_url": {
+      "message": "Neue URL"
+   },
+   "next": {
+      "message": "Nächste"
+   },
+   "no_page": {
+      "message": "Keine Seiten auf diesem Gerät gefunden!"
+   },
+   "note_placeholder": {
+      "message": "Gib deinen Kommentar ein und drücke ✔ oder Esc"
+   },
+   "page": {
+      "message": "Seite"
+   },
+   "page_comment": {
+      "message": "Seitenkommentar"
+   },
+   "pages": {
+      "message": "Seiten"
+   },
+   "pass": {
+      "message": "Passwort"
+   },
+   "prev": {
+      "message": "Vorherige"
+   },
+   "print": {
+      "message": "Drucken"
+   },
+   "q_highlighter": {
+      "message": "Schnellmarkierer"
+   },
+   "rate": {
+      "message": "Rate"
+   },
+   "refresh": {
+      "message": "Aktualisieren"
+   },
+   "report_bug": {
+      "message": "Fehler melden"
+   },
+   "report_bug_support": {
+      "message": "Helft uns, Fehler schneller zu beheben!"
+   },
+   "resync_intro": {
+      "message": "\u003Cp>Ihre Daten wurden erfolgreich mit der Cloud synchronisiert. Um die neu importierten Highlights anzuzeigen und zu nutzen, aktualisieren Sie bitte die Seite und aktivieren Sie ZetaMarker erneut.\u003C/p>"
+   },
+   "retry": {
+      "message": "Erneut versuchen"
+   },
+   "search_placeholder": {
+      "message": "Stichwörter eingeben, um zu suchen..."
+   },
+   "setting": {
+      "message": "Settings"
+   },
+   "setting_notice": {
+      "message": "Hinweis: Änderungen werden bei der nächsten Aktivierung der Erweiterung übernommen."
+   },
+   "setting_title_shortcut": {
+      "message": "Verknüpfungen anpassen"
+   },
+   "setting_title_theme": {
+      "message": "Standardthema"
+   },
+   "setting_title_toolbar": {
+      "message": "Standardsymbolleiste"
+   },
+   "sidebar": {
+      "message": "Seitenleiste"
+   },
+   "sort_earliest": {
+      "message": "Nach ältesten sortieren"
+   },
+   "sort_latest": {
+      "message": "Nach neuesten sortieren"
+   },
+   "sort_position": {
+      "message": "Nach Position sortieren"
+   },
+   "steps_reproduce": {
+      "message": "Schritte zur Reproduktion"
+   },
+   "steps_reproduce_placeholder": {
+      "message": "1. Machen Sie das...\n2. Dann das...\n3. Problem tritt auf"
+   },
+   "submit_bug": {
+      "message": "Fehlerbericht senden"
+   },
+   "submit_bug_err": {
+      "message": "Bitte füllen Sie alle Felder aus, bevor Sie absenden."
+   },
+   "success_fetch_pages": {
+      "message": "$1 seiten abgerufen! Abrufen von Anmerkungen für jede Seite."
+   },
+   "success_fetch_pages_zero": {
+      "message": "Keine neuen Seiten in der Cloud gefunden."
+   },
+   "success_login": {
+      "message": "Erfolg: Sie haben sich angemeldet."
+   },
+   "success_logout": {
+      "message": "Erfolg: Sie haben sich abgemeldet."
+   },
+   "success_sync": {
+      "message": "Erfolg: Synchronisation abgeschlossen."
+   },
+   "support_us": {
+      "message": "Unterstütze uns"
+   },
+   "sync_check_intro": {
+      "message": "\u003Cp>Ihre Änderungen wurden erfolgreich mit der Cloud synchronisiert. Wir spiegeln Ihre Updates alle 10 Sekunden automatisch in der Cloud wider, um sicherzustellen, dass alles auf dem neuesten Stand bleibt.\u003C/p>"
+   },
+   "sync_fail_intro": {
+      "message": "\u003Cp>Einige Ihrer Änderungen konnten aufgrund eines Synchronisierungsproblems nicht in der Cloud gespeichert werden. Keine Sorge, wir versuchen alle 10 Sekunden automatisch, zu synchronisieren.\u003C/p>"
+   },
+   "sync_no_found": {
+      "message": "Daten auf anderen Geräten gelöscht"
+   },
+   "sync_no_found_intro": {
+      "message": "\u003Cp>Die Daten auf dieser Seite wurden auf anderen Geräten gelöscht. Bitte aktualisieren Sie die Seite und aktivieren Sie ZetaMarker erneut, um den Inhalt zu aktualisieren.\u003C/p>"
+   },
+   "synced": {
+      "message": "Synchronisiert"
+   },
+   "tip_app": {
+      "message": "App öffnen"
+   },
+   "txt_no_annotation": {
+      "message": "Keine Anmerkungen gefunden"
+   },
+   "txt_no_annotation_sub": {
+      "message": "Synchronisieren, um Anmerkungen von anderen Geräten anzuzeigen!"
+   },
+   "txt_or": {
+      "message": "ODER"
+   },
+   "updated": {
+      "message": "Aktualisiert"
+   },
+   "url_placeholder": {
+      "message": "Fügen Sie die URL aus der Adressleiste Ihres Browsers ein"
+   }
+}

@@ -1,0 +1,22 @@
+{
+   "action": {
+      "default_icon": "assets/19x19.png",
+      "default_popup": "popup.html"
+   },
+   "background": {
+      "service_worker": "js/sw.js"
+   },
+   "default_locale": "zh_TW",
+   "description": "__MSG_app_desc__",
+   "icons": {
+      "128": "assets/128x128.png",
+      "19": "assets/19x19.png",
+      "48": "assets/48x48.png"
+   },
+   "key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDcB72QEz5Nif+fTHvQDFyxIRin8ZwWvZetmlrrT+5IJgMrglcViQquh2Fi66PLWty9fZOCQEAHSikPrVgcZO9m/VZ9v7kjEE4ClUyJPYecrDAmmtodk4flJSem2+24G4mk1ExPXy70EC+ayBkVrlTebssge09ag+lcH05vzozhcQIDAQAB",
+   "manifest_version": 3,
+   "name": "__MSG_app_name__",
+   "permissions": [ "contextMenus" ],
+   "update_url": "http://clients2.google.com/service/update2/crx",
+   "version": "5.1"
+}

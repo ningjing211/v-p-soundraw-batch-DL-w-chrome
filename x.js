@@ -4,7 +4,7 @@ const os = require('os');
 const fs = require('fs');
 
 // 添加上次记录的歌曲数量
-const LAST_RECORDED_SONGS = 76;
+const LAST_RECORDED_SONGS = 0;
 
 const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
 
@@ -79,14 +79,14 @@ function initializeDownloadLog() {
   if (!fs.existsSync(downloadLogFile)) {
     console.log('📝 初始化下載日誌...');
     const initialLog = {
-      lastTotalSongs: 282,  // 上次記錄為282首
+      lastTotalSongs: 0,  // 上次記錄為0首
       sessions: [],
       currentSession: {
-        startTime: new Date().toLocaleString('zh-TW', { timeZone: 'Asia/Taipei' }),
+        startTime: new Date().toISOString(),
         songs: [],
         totalSongs: 0
       },
-      lastDownloadEndedTime: null
+      lastDownloadEndedTime: null  // 添加最後下載時間字段
     };
     fs.writeFileSync(downloadLogFile, JSON.stringify(initialLog, null, 2));
     console.log('✅ 下載日誌初始化完成');
@@ -107,9 +107,9 @@ function loadDownloadLog() {
     if (fs.existsSync(downloadLogFile)) {
       const data = fs.readFileSync(downloadLogFile, 'utf8');
       const log = JSON.parse(data);
-      // 如果文件存在但沒有 lastTotalSongs，設置為282
+      // 如果文件存在但沒有 lastTotalSongs，設置為0
       if (!log.lastTotalSongs) {
-        log.lastTotalSongs = 282;
+        log.lastTotalSongs = 0;
       }
       // 如果沒有 lastDownloadEndedTime 字段，添加它
       if (!log.hasOwnProperty('lastDownloadEndedTime')) {
@@ -124,10 +124,10 @@ function loadDownloadLog() {
   
   // 如果出現錯誤，返回預設值
   return {
-    lastTotalSongs: 282,
+    lastTotalSongs: 0,
     sessions: [],
     currentSession: {
-      startTime: new Date().toLocaleString('zh-TW', { timeZone: 'Asia/Taipei' }),
+      startTime: new Date().toISOString(),
       songs: [],
       totalSongs: 0
     },
@@ -167,7 +167,7 @@ async function checkNewSongs(page) {
     
     // 重置下載會話，但不存储 targetNewSongs
     downloadLog.currentSession = {
-      startTime: new Date().toLocaleString('zh-TW', { timeZone: 'Asia/Taipei' }),
+      startTime: new Date().toISOString(),
       songs: [],
       totalSongs: 0  // 重置為0
     };
@@ -194,16 +194,7 @@ function logDownloadedSong(log, songTitle, pageNumber, songIndex) {
     title: songTitle,
     page: pageNumber,
     index: songIndex,
-    downloadTime: new Date().toLocaleString('zh-TW', { 
-      timeZone: 'Asia/Taipei',
-      year: 'numeric',
-      month: '2-digit',
-      day: '2-digit',
-      hour: '2-digit',
-      minute: '2-digit',
-      second: '2-digit',
-      hour12: true
-    })
+    downloadTime: new Date().toISOString()
   });
   log.currentSession.totalSongs++;
   saveDownloadLog(log);
@@ -211,19 +202,10 @@ function logDownloadedSong(log, songTitle, pageNumber, songIndex) {
 
 // 完成当前会话
 function completeSession(log) {
-  log.currentSession.endTime = new Date().toLocaleString('zh-TW', { 
-    timeZone: 'Asia/Taipei',
-    year: 'numeric',
-    month: '2-digit',
-    day: '2-digit',
-    hour: '2-digit',
-    minute: '2-digit',
-    second: '2-digit',
-    hour12: true
-  });
+  log.currentSession.endTime = new Date().toISOString();
   log.sessions.push(log.currentSession);
   log.currentSession = {
-    startTime: new Date().toLocaleString('zh-TW', { timeZone: 'Asia/Taipei' }),
+    startTime: new Date().toISOString(),
     songs: [],
     totalSongs: 0
   };
@@ -430,15 +412,19 @@ async function processAllSongs(page) {
   let downloadedCount = 0;  // 從0開始計數
   
   // 重新獲取目標下載數量
-  const { newSongsCount: targetNewSongs } = await checkNewSongs(page);
+  const { newSongsCount: targetNewSongs, currentTotalSongs } = await checkNewSongs(page);
+  
+  // 計算需要下載的歌曲數量
+  const songsToDownload = currentTotalSongs - downloadLog.lastTotalSongs;
   
   console.log(`🎵 開始下載新歌...`);
-  console.log(`⏳ 將只下載前 ${targetNewSongs} 首新歌`);
-  console.log(`🎯 目標下載數量: ${targetNewSongs} 首新歌`);
-  console.log(`📝 開始下載第 ${downloadedCount + 1}/${targetNewSongs} 首歌`);
+  console.log(`📊 當前總歌曲數: ${currentTotalSongs}`);
+  console.log(`📊 上次記錄數: ${downloadLog.lastTotalSongs}`);
+  console.log(`🎯 需要下載: ${songsToDownload} 首新歌`);
+  console.log(`📝 開始下載第 ${downloadedCount + 1}/${songsToDownload} 首歌`);
 
   // 確保回到第一頁
-  console.log('🔄 返回第一頁...');
+  console.log('🔄 返回第1頁...');
   await page.goto('https://soundraw.io/favorite?page=1', { waitUntil: 'networkidle2' });
   await new Promise(r => setTimeout(r, 2000));
 
@@ -448,18 +434,18 @@ async function processAllSongs(page) {
   // 遍歷每一頁
   let currentPage = 1;
   
-  while (downloadedCount < targetNewSongs) {
+  while (downloadedCount < songsToDownload) {
     console.log(`\n📄 正在處理第 ${currentPage} 頁`);
     const downloadBtns = await page.$$('#gtm-track-download-btn');
     
     // 處理當前頁面的歌曲
-    for (let i = 0; i < downloadBtns.length && downloadedCount < targetNewSongs; i++) {
+    for (let i = 0; i < downloadBtns.length && downloadedCount < songsToDownload; i++) {
       try {
         const btn = downloadBtns[i];
         const songTitle = await getSongTitle(btn);
         
         const currentSongNumber = downloadedCount + 1;
-        console.log(`\n▶️ 處理第 ${currentSongNumber}/${targetNewSongs} 首新歌${songTitle ? ': ' + songTitle : ''}`);
+        console.log(`\n▶️ 處理第 ${currentSongNumber}/${songsToDownload} 首新歌${songTitle ? ': ' + songTitle : ''}`);
 
         await btn.evaluate(b => b.scrollIntoView({ behavior: 'smooth', block: 'center' }));
         await new Promise(r => setTimeout(r, 800));
@@ -474,23 +460,14 @@ async function processAllSongs(page) {
           const result = await waitForFileDownload();
           if (result.success) {
             downloadedCount++;
-            console.log(`✅ 已下載 ${downloadedCount}/${targetNewSongs} 首歌`);
+            console.log(`✅ 已下載 ${downloadedCount}/${songsToDownload} 首歌`);
             
             // 更新下載記錄
             downloadLog.currentSession.songs.push({
               title: songTitle,
               page: currentPage,
               index: i + 1,
-              downloadTime: new Date().toLocaleString('zh-TW', { 
-                timeZone: 'Asia/Taipei',
-                year: 'numeric',
-                month: '2-digit',
-                day: '2-digit',
-                hour: '2-digit',
-                minute: '2-digit',
-                second: '2-digit',
-                hour12: true
-              }),
+              downloadTime: new Date().toISOString(),
               filename: result.filename
             });
             downloadLog.currentSession.totalSongs = downloadedCount;
@@ -503,23 +480,14 @@ async function processAllSongs(page) {
         const result = await waitForFileDownload();
         if (result.success) {
           downloadedCount++;
-          console.log(`✅ 已下載 ${downloadedCount}/${targetNewSongs} 首歌`);
+          console.log(`✅ 已下載 ${downloadedCount}/${songsToDownload} 首歌`);
           
           // 更新下載記錄
           downloadLog.currentSession.songs.push({
             title: songTitle,
             page: currentPage,
             index: i + 1,
-            downloadTime: new Date().toLocaleString('zh-TW', { 
-              timeZone: 'Asia/Taipei',
-              year: 'numeric',
-              month: '2-digit',
-              day: '2-digit',
-              hour: '2-digit',
-              minute: '2-digit',
-              second: '2-digit',
-              hour12: true
-            }),
+            downloadTime: new Date().toISOString(),
             filename: result.filename
           });
           downloadLog.currentSession.totalSongs = downloadedCount;
@@ -533,7 +501,7 @@ async function processAllSongs(page) {
     }
     
     // 檢查是否需要進入下一頁
-    if (downloadedCount < targetNewSongs) {
+    if (downloadedCount < songsToDownload) {
       const hasNext = await hasNextPage(page);
       if (!hasNext) break;
       
@@ -543,22 +511,14 @@ async function processAllSongs(page) {
     }
   }
 
-  // 更新最後下載時間（使用台灣時間格式）
+  // 更新最後下載時間和總歌曲數
   downloadLog = loadDownloadLog();  // 重新加載以防其他進程修改
-  const twTime = new Date().toLocaleString('zh-TW', { 
-    timeZone: 'Asia/Taipei',
-    year: 'numeric',
-    month: '2-digit',
-    day: '2-digit',
-    hour: '2-digit',
-    minute: '2-digit',
-    second: '2-digit',
-    hour12: true
-  });
-  downloadLog.lastDownloadEndedTime = twTime;
+  downloadLog.lastDownloadEndedTime = new Date().toISOString();
+  downloadLog.lastTotalSongs = currentTotalSongs;  // 更新最新的歌曲總數
   saveDownloadLog(downloadLog);
   
-  console.log(`\n✅ 新歌下載完成！結束時間: ${twTime}`);
+  console.log(`\n✅ 新歌下載完成！結束時間: ${new Date().toLocaleString('zh-TW', { timeZone: 'Asia/Taipei' })}`);
+  console.log(`📊 已更新歌曲總數至: ${currentTotalSongs}`);
 }
 
 async function getTotalSongs(page) {
@@ -722,10 +682,14 @@ async function downloadFavoriteSongs() {
     // 如果是第一次運行或需要初始化已下載狀態
     const downloadLog = loadDownloadLog();
     if (downloadLog.lastTotalSongs === 0) {
-      console.log('\n⚠️ 初始化下載記錄...');
-      console.log(`📝 記錄當前 ${currentTotalSongs} 首歌為已下載狀態`);
+      console.log('\n🎵 開始下載所有歌曲...');
+      console.log(`📝 將下載全部 ${currentTotalSongs} 首歌`);
+      
+      // 開始下載流程
+      await processAllSongs(page);
+      
+      // 更新總歌曲數
       updateTotalSongs(downloadLog, currentTotalSongs);
-      console.log('✅ 初始化完成！下次執行時將只下載新增的歌曲');
     }
     // 如果有新歌才執行下載
     else if (hasNewSongs) {
@@ -734,7 +698,7 @@ async function downloadFavoriteSongs() {
       
       // 修改下載進度，只下載新歌
       downloadLog.currentSession = {
-        startTime: new Date().toLocaleString('zh-TW', { timeZone: 'Asia/Taipei' }),
+        startTime: new Date().toISOString(),
         songs: [],
         totalSongs: 0,
         lastPage: 1,

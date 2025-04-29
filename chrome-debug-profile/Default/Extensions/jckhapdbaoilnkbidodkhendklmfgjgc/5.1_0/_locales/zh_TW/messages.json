@@ -1,0 +1,32 @@
+{
+   "app_desc": {
+      "message": "方便地進行簡體和繁體的轉換。適用於需要復制粘貼的場景，沒有任何臃腫的功能，十分輕便。"
+   },
+   "app_name": {
+      "message": "簡繁轉化工具"
+   },
+   "copy": {
+      "message": "複製"
+   },
+   "download_desc": {
+      "message": "Chrome簡繁轉換工具5.1"
+   },
+   "download_link": {
+      "message": "擴展下載連結"
+   },
+   "fanti": {
+      "message": "轉化為繁體"
+   },
+   "flush": {
+      "message": "清空"
+   },
+   "jianti": {
+      "message": "轉化為簡體"
+   },
+   "share_on_fb": {
+      "message": "分享至臉書"
+   },
+   "share_on_tw": {
+      "message": "Po至Twitter"
+   }
+}

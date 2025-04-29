@@ -1,0 +1,302 @@
+{
+   "activate_shortcut": {
+      "message": "ZetaMarkerを有効化する"
+   },
+   "auto_intro": {
+      "message": "\u003Cp style='margin-top:15px'>訪問したページのデータは、ZetaMarkerをアクティブにするたびに自動的にクラウドと同期されるようになりました。また、ページ上で行われた変更も自動的にクラウドに保存されます。これにより手動同期が不要になり、データ管理がより迅速で簡単になります。\u003C/p>\u003Cp>クラウドとデータを自動的に同期させたくない場合は、アカウントからログアウトすることができます。\u003C/p>"
+   },
+   "auto_log_txt": {
+      "message": "現在ログインしています。"
+   },
+   "auto_title": {
+      "message": "自動同期"
+   },
+   "browser": {
+      "message": "ブラウザ"
+   },
+   "btn_google": {
+      "message": "Googleで続行"
+   },
+   "btn_login": {
+      "message": "アカウントにサインインする"
+   },
+   "btn_signup": {
+      "message": "アカウントを作成しますか？"
+   },
+   "btn_url": {
+      "message": "URLを編集"
+   },
+   "cancel": {
+      "message": "キャンセル"
+   },
+   "close": {
+      "message": "閉じる"
+   },
+   "cloud_check": {
+      "message": "データが同期されました"
+   },
+   "cloud_fail": {
+      "message": "同期エラー。クリックして再試行してください。"
+   },
+   "cloud_slash": {
+      "message": "同期するにはログインしてください"
+   },
+   "confirm": {
+      "message": "確認"
+   },
+   "copied": {
+      "message": "全てコピー"
+   },
+   "copy": {
+      "message": "コピー"
+   },
+   "copy_all": {
+      "message": "全てコピー"
+   },
+   "current_version": {
+      "message": "バージョン 7.4"
+   },
+   "dark": {
+      "message": "暗いテーマ"
+   },
+   "delete": {
+      "message": "削除"
+   },
+   "dismiss": {
+      "message": "閉じる"
+   },
+   "edit_title": {
+      "message": "タイトルを編集"
+   },
+   "email": {
+      "message": "メール"
+   },
+   "error": {
+      "message": "何かがうまくいかないようです"
+   },
+   "error_another_user": {
+      "message": "別のユーザーがデバイスを使用中です"
+   },
+   "error_google_login": {
+      "message": "Googleの認証に失敗しました"
+   },
+   "error_invalid_email": {
+      "message": "無効なメールアドレスです"
+   },
+   "error_invalid_pass": {
+      "message": "無効なパスワードです"
+   },
+   "error_login": {
+      "message": "間違ったメールアドレスまたはパスワードです"
+   },
+   "error_url": {
+      "message": "有効なURLまたはPDFファイルのパスを入力してください。"
+   },
+   "export": {
+      "message": "エクスポート"
+   },
+   "extdesc": {
+      "message": "ウェブページやPDFファイルをハイライトするための、最もプライバシーに配慮したツール。"
+   },
+   "extname": {
+      "message": "ZetaMarker ハイライター - PDF & Web"
+   },
+   "fail_intro": {
+      "message": "\u003Cp>クラウドとの同期に失敗しました。インターネット接続を確認してください。今すぐ同期を再試行するか、このメッセージを閉じてオフライン作業を続けることができます。変更は次回このページにアクセスしたときに同期されます。\u003C/p>"
+   },
+   "failed_sync": {
+      "message": "データの同期に失敗しました"
+   },
+   "feedback": {
+      "message": "フィードバック"
+   },
+   "fetch_pages": {
+      "message": "クラウドからページを取得する"
+   },
+   "forgot_pass": {
+      "message": "パスワードをお忘れですか？"
+   },
+   "guide": {
+      "message": "利用ガイド"
+   },
+   "highlights": {
+      "message": "ハイライト"
+   },
+   "issue_summary": {
+      "message": "問題の概要"
+   },
+   "issue_summary_placeholder": {
+      "message": "問題を簡単に説明してください"
+   },
+   "light": {
+      "message": "明るいテーマ"
+   },
+   "loadig_login": {
+      "message": "サインイン中..."
+   },
+   "login": {
+      "message": "ログイン"
+   },
+   "login_to_sync": {
+      "message": "同期するためにログインしてください"
+   },
+   "logout": {
+      "message": "ログアウト"
+   },
+   "minimal": {
+      "message": "フローティングツールバー"
+   },
+   "modal_delete_title": {
+      "message": "このページを削除してもよろしいですか？"
+   },
+   "modal_delete_warning": {
+      "message": "このページのすべてのハイライトは、このデバイスから永久に削除されます。削除する前に、データをバックアップするために同期することをお勧めします。"
+   },
+   "new_url": {
+      "message": "新しいURL"
+   },
+   "next": {
+      "message": "次"
+   },
+   "no_page": {
+      "message": "このデバイスにはページが見つかりません！"
+   },
+   "note_placeholder": {
+      "message": "コメントを入力し、✔ または Esc を押します"
+   },
+   "page": {
+      "message": "ページ"
+   },
+   "page_comment": {
+      "message": "ページのコメント"
+   },
+   "pages": {
+      "message": "すべてのページ"
+   },
+   "pass": {
+      "message": "パスワード"
+   },
+   "prev": {
+      "message": "前の"
+   },
+   "print": {
+      "message": "印刷"
+   },
+   "q_highlighter": {
+      "message": "クイックハイライター"
+   },
+   "rate": {
+      "message": "レート"
+   },
+   "refresh": {
+      "message": "更新"
+   },
+   "report_bug": {
+      "message": "バグを報告する"
+   },
+   "report_bug_support": {
+      "message": "バグをより早く修正するためにご協力ください"
+   },
+   "resync_intro": {
+      "message": "\u003Cp>データがクラウドと正常に同期されました。新しくインポートされたハイライトを表示して使用するには、ページを更新してZetaMarkerを再起動してください。\u003C/p>"
+   },
+   "retry": {
+      "message": "再試行"
+   },
+   "search_placeholder": {
+      "message": "検索キーワードを入力してください"
+   },
+   "setting": {
+      "message": "設定"
+   },
+   "setting_notice": {
+      "message": "注意: 変更は次回拡張機能の有効化時に適用されます。"
+   },
+   "setting_title_shortcut": {
+      "message": "ショートカットを調整"
+   },
+   "setting_title_theme": {
+      "message": "デフォルトテーマ"
+   },
+   "setting_title_toolbar": {
+      "message": "デフォルトツールバー"
+   },
+   "sidebar": {
+      "message": "サイドバー"
+   },
+   "sort_earliest": {
+      "message": "古い順に並べる"
+   },
+   "sort_latest": {
+      "message": "新しい順に並べる"
+   },
+   "sort_position": {
+      "message": "位置で並べ替え"
+   },
+   "steps_reproduce": {
+      "message": "再現手順"
+   },
+   "steps_reproduce_placeholder": {
+      "message": "1. これを行う...\n2. 次にこれを行う...\n3. 問題が発生する"
+   },
+   "submit_bug": {
+      "message": "バグレポートを送信"
+   },
+   "submit_bug_err": {
+      "message": "提出前に全フィールドを入力してください。"
+   },
+   "success_fetch_pages": {
+      "message": "$1 ページ取得完了！各ページの注釈を取得します"
+   },
+   "success_fetch_pages_zero": {
+      "message": "クラウドに新しいページは見つかりませんでした"
+   },
+   "success_login": {
+      "message": "成功: ログインしました。"
+   },
+   "success_logout": {
+      "message": "成功：ログアウトしました"
+   },
+   "success_sync": {
+      "message": "成功: 同期が完了しました"
+   },
+   "support_us": {
+      "message": "私たちを支援"
+   },
+   "sync_check_intro": {
+      "message": "\u003Cp>変更内容はクラウドストレージと正常に同期されています。すべてが最新の状態になるよう、10秒ごとにクラウドに更新を反映させています。\u003C/p>"
+   },
+   "sync_fail_intro": {
+      "message": "\u003Cp>同期の問題により、一部の変更をクラウドに反映できませんでした。心配しないでください。10秒ごとに自動的に同期を試みます。\u003C/p>"
+   },
+   "sync_no_found": {
+      "message": "他のデバイスでデータが削除されました"
+   },
+   "sync_no_found_intro": {
+      "message": "\u003Cp>このページのデータは他のデバイスで削除されました。ページを更新してZetaMarkerを再起動し、コンテンツを更新してください。\u003C/p>"
+   },
+   "synced": {
+      "message": "同期された"
+   },
+   "tip_app": {
+      "message": "ウェブアプリ"
+   },
+   "tip_comment": {
+      "message": "ノートを開く"
+   },
+   "txt_no_annotation": {
+      "message": "ハイライトはありません"
+   },
+   "txt_no_annotation_sub": {
+      "message": "クラウドからハイライトを取得するために同期してください"
+   },
+   "txt_or": {
+      "message": "または"
+   },
+   "updated": {
+      "message": "更新日時"
+   },
+   "url_placeholder": {
+      "message": "ブラウザのアドレスバーからURLを貼り付けてください"
+   }
+}
